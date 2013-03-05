@@ -8,6 +8,7 @@
 }
 .deck-container h1 {
   color: #000;
+  line-height: 1.5em;
 }
 .deck-container h2 {
   color: #c00;
@@ -21,6 +22,7 @@
 }
 .deck-container code {
   color: #888;
+  font-size: 2em;
 }
 .deck-container blockquote {
   font-size: 2em;
