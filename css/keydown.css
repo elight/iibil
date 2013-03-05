@@ -104,12 +104,14 @@ body {
       -moz-box-pack: start;
       -ms-box-pack: start;
       box-pack: start; }
-      .keydown.deck-container .slide.full-background.jarjar {
-        background-image: url(../images/jarjar.jpg); }
-      .keydown.deck-container .slide.full-background.jarjar {
-        background-image: url(../images/jarjar.jpg); }
       .keydown.deck-container .slide.full-background.stuff_i_do {
         background-image: url(../images/stuff_i_do.png); }
+      .keydown.deck-container .slide.full-background.jarjar {
+        background-image: url(../images/jarjar.jpg); }
+      .keydown.deck-container .slide.full-background.data_mapper {
+        background-image: url(../images/data_mapper.png); }
+      .keydown.deck-container .slide.full-background.lipstick_on_a_pig {
+        background-image: url(../images/lipstick_on_a_pig.jpg); }
       .keydown.deck-container .slide.full-background h1 {
         display: inline;
         position: absolute;

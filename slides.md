@@ -1,36 +1,76 @@
 
 !SLIDE middle
 # Evan Light
-## **<u>Freelance Code Janitor</u>**
+## **<u>Freelance Mentor and Code Janitor</u>**
 ## [@elight](http://twitter.com/elight)
+## [http://tripledogdare.net](http://tripledogdare.net)
 ## [evan.light@tripledogdare.net](mailto:evan.light@tripledogdare.net)
 
-!SLIDE 
-    I have a set of alarm bells that go off when people say, "Always do this".
--- Martin Fowler, POEAA
-
-!SLIDE
-# Why?
-!NOTES
-* Prematurely optimizing around Rails
-* Purists wanting one and only one way to solve any given problem in a Rails app
-* "Use Rails Until it Hurts"
-* Instead of using every flavor-du-jour gem/technique...
-* ... use plain ol' Rails up until it causes you pain
-* **THEN** choose a pattern/tool or two to use when you leave the golden path
-* Purists tend to be more experienced developers
-* How should more experienced Rails developers accomodate everyone else?
-
-!SLIDE top-left
-}}} images/jarjar.jpg
-# If it bleeds...
-
-!SLIDE bottom-right
-}}} images/jarjar.jpg
-# ... it leads
 
 !SLIDE middle
 }}} images/stuff_i_do.png
+
+!SLIDE
+# "[Use Rails until it hurts](http://evan.tiggerpalace.com/articles/2012/11/21/use-rails-until-it-hurts/)"
+!NOTES
+
+!SLIDE 
+    I have a set of alarm bells that go off when people say, "Always do this".
+-- Martin Fowler, Patterns of Enterprise Application Architecture
+
+!SLIDE
+# What about when we go
+# off the Rails?
+!NOTES
+# Which patterns do we choose?
+# Which tools?
+
+!SLIDE
+# It depends
+!NOTES
+# These questions are difficult to answer unless you're an expert
+
+!SLIDE
+# HEURISTIC
+## noun, /hyo͞oˈristik/
+## involving or serving as an aid to learning, discovery, or problem-solving by experimental and especially trial-and-error
+##### [Source: Meriam-Webster](http://www.merriam-webster.com/dictionary/heuristic)
+## &nbsp;
+## TL;DR: experience-based
+
+!SLIDE
+# Contemporary alternative Rails 
+# patterns tend to use 
+# their own idioms
+
+!SLIDE
+# But they're new 
+### (at least to Rails)
+# They're bleeding edge
+
+!SLIDE bottom-right
+}}} images/jarjar.jpg
+# If it bleeds, it leads
+
+!SLIDE
+# NEOPHILIA
+## noun \nē-ə-ˈfi-lē-ə\
+## love of or enthusiasm for what is new or novel
+###### [Source: Merriam-Webster](http://www.merriam-webster.com/dictionary/neophilia)
+!NOTES
+# Our blogs are full of "new"
+# Our conferences are full of "new"
+# We kid about our attraction to shiny
+
+!SLIDE
+    Once you have something that grows faster than education grows, you’re always going to get a pop culture.
+-- [Alan Kay](http://queue.acm.org/detail.cfm?id=1039523)
+
+!SLIDE
+# New tools and patterns:
+# our pop culture
+!NOTES
+# Less reliable due to being untried, less tried, or less understood
 
 !SLIDE
 # PATTERN
@@ -44,34 +84,35 @@
 
 !SLIDE
 # Step 2
-# Name practices
+# Name practice
 
 !SLIDE
 # Pattern ends here
 
 !SLIDE
-# But then we automate what we can predict
+# But then we automate
+# what we can predict
 
 !SLIDE
 # Step 3
-# Partially implement pattern as tools
+# Create tool from pattern
 !NOTES
 * Tools encode knowledge
 * Reduces number of choices required by a pattern user
 
 !SLIDE
 # Step 4
-# Best practices for tools
+# Identify best practices for tool
 !NOTES
-* Further reduce number of choices of a pattern user
-* Managing the "paradox of choice"
+# Further reduce number of choices of a pattern user
+# Managing the "paradox of choice"
 
 !SLIDE
 # Step 5
-# Identify holes in tools
+# Identify failings in tool
 !NOTES
-* "Frustration Driven Development"
-* Pain tells us that we need additional change
+# Failings in our current practices lead us to new practices
+# New practices lead to new patterns
 
 !SLIDE
 # Step 6
@@ -90,9 +131,9 @@ GOTO 1
 
 !SLIDE
 # Rais as POEAA patterns
-## Active Record
-## Model View Controller
 ## Front Controller
+## Model View Controller
+## Active Record
 ## Template View
 
 !SLIDE
@@ -100,9 +141,9 @@ GOTO 1
 ## [Presenter](http://blog.jayfields.com/2007/03/rails-presenter-pattern.html) ([gem](https://github.com/jcasimir/draper))
 ## [Exhibit](http://objectsonrails.com/) ([gem](https://github.com/objects-on-rails/display-case))
 ## [Form Objects](http://pivotallabs.com/form-backing-objects-for-fun-and-profit/) ([gem](https://github.com/ClearFit/redtape))
-## [Policy Objects](https://github.com/bitlove/objectify)
+## Policy Objects ([gem](https://github.com/bitlove/objectify))
 ## [DCI](http://dci-in-ruby.info/)
-## [Service Object](http://jamesgolick.com/2010/3/14/crazy-heretical-and-awesome-the-way-i-write-rails-apps.html) ([gem](https://github.com/bitlove/objectify)
+## [Service Object](http://jamesgolick.com/2010/3/14/crazy-heretical-and-awesome-the-way-i-write-rails-apps.html) ([gem](https://github.com/bitlove/objectify))
 
 !SLIDE
 # Layering
@@ -112,37 +153,126 @@ TODO: Discuss how layering, ultimatley what these tools offer  simplifies managi
 TODO: Cascading changes are additional complexity
 
 !SLIDE
-
-
-!
-!SLIDE
 # [Active Record](http://www.martinfowler.com/eaaCatalog/activeRecord.html)
     An object that wraps a row in a database table or view, encapsulates the database access, and adds domain logic on that data.
+# -- POEAA
 
 !SLIDE
-# Hypothesis
-## Any non-trivial Rails contains either bloated ActiveRecord::Base subclasses or non-ActiveRecord domain model classes
+### Any non-trivial Rails app contains either/both
+### bloated ActiveRecord::Base subclasses 
+### and
+### non-ActiveRecord domain model classes
 
 !SLIDE
-# The Popular thinking: persistence and domain logic should not coexist in a Rails app due to model bloat
+### Vox populi
+# persistence and domain logic 
+# should not coexist in a Rails app
 
 !SLIDE
 # Are we doing it wrong?
-    If the \[database table to domain model\] mapping is simple, Active Record (160) does the same job without an additional layer of code. If the mapping is complex, Data Mapper (165) works better, as it's better at decoupling the data structure from the domain objects
+    If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer of code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
 -- Martin Fowler, POEAA
 
 !SLIDE
+# "If the mapping is complex,
+# Data Mapper works better..."
+
+!SLIDE top-left
 # Possible Solution: Data Mapper
+}}} images/data_mapper.png
 
 !SLIDE
-# Clear separation between data source, data mapping, and domain model
+# Clear separation between
+## source
+## mapping
+## model
 
 !SLIDE
 # What's keeping us?
-## [DataMapper](http://datamapper.org) is not a true [Data Mapper](http://martinfowler.com/eaaCatalog/dataMapper.html)
-## [DataMapper 2](https://github.com/datamapper) is still WIP
-## For instance, DM2 doesn't have an official [Unit of Work](http://martinfowler.com/eaaCatalog/unitOfWork.html) (application-level notion of transaction) impl.
-!NOTES
+
+!SLIDE
+# Can we use ActiveRecord as a Data Mapper?
+
+!SLIDE
+# [Repository pattern](http://martinfowler.com/eaaCatalog/repository.html)
+## well... sort of
+
+!SLIDE
+# [edr](http://github.com/nulogy/edr)
+# &nbsp;
+###### See [Building Rich Domain Models in Rails. Separating Persistence.](http://engineering.nulogy.com/posts/building-rich-domain-models-in-rails-separating-persistence)
+
+!SLIDE
+}}} images/lipstick_on_a_pig.jpg::DailySaving::::http://daily-saving.blogspot.com/2010/11/dont-fall-for-lipstick-on-pig-its-still.html
+
+!SLIDE
+# ActiveRecord is *not* a pig
+
+!SLIDE
+# ActiveRecord
+# &nbsp;
+@@@ ruby
+class OrderData < ActiveRecord::Base
+  self.table_name = "orders"
+
+  attr_accessible :amount, :deliver_at
+
+  has_many :items, class_name: "ItemData", foreign_key: "order_id"
+
+  validates :amount, numericality: true
+end
+@@@
+
+!SLIDE
+# Domain Model
+# &nbsp;
+@@@ ruby
+class Order
+  include Edr::Model
+
+  fields :id, :amount, :deliver_at
+
+  wrap_associations :items
+
+  def add_item attrs
+    wrap association(:items).new(attrs)
+  end
+end
+@@@
+
+!SLIDE
+# Domain Model to ActiveRecord
+# &nbsp;
+@@@ ruby
+Edr::Registry.define do
+  map Order, OrderData
+  map Item, ItemData
+end
+@@@
+
+!SLIDE
+# Repository
+# &nbsp;
+@@@ ruby
+module OrderRepository
+  extend Edr::AR::Repository
+  set_model_class Order
+	
+  def self.find_by_amount amount
+    where(amount: amount)
+  end
+end
+@@@
+
+!SLIDE
+# [DataMapper](http://datamapper.org) is not a true [Data Mapper](http://martinfowler.com/eaaCatalog/dataMapper.html)
+
+!SLIDE
+# [DataMapper 2](https://github.com/datamapper) is still WIP
+# &nbsp;
+###### For instance, DM2 doesn't yet have an official [Unit of Work](http://martinfowler.com/eaaCatalog/unitOfWork.html) implementation
+
+
 
 
 
@@ -177,19 +307,18 @@ Could almost use a flow diagram here! Is there a tool?  No? IS there a book?  No
 
 
 
-
-!SLIDE
-# NEOPHILIA
+!SLIDE left
 # &nbsp;
 # &nbsp;
+# Attribution
+# &nbsp;
+#### [Glenn Goodrich](http://twitter.com/ruprictgeek): Introduced me to edr which led me to read POEAA
+#### [Martin Fowler](http://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420): For his POEAA book
+#### [Ryan Bigg](http://twitter.com/ryanbigg): For early feedback on this talk
+#### [Gary Bernhardt](http://twitter.com/garybernhardt): [Capability vs. Suitability](http://www.youtube.com/watch?v=NftT6HWFgq0) informed early concepts for this talk
 
 !SLIDE
-# NEOPHILIA
-## noun \nē-ə-ˈfi-lē-ə\
-## love of or enthusiasm for what is new or novel
-###### [Source: Merriam-Webster](http://www.merriam-webster.com/dictionary/neophilia)
-
-
-!SLIDE
-# Sources
+# Citations
 ## Martin Fowler, [Patterns of Enterprise Application Architecture](http://www.amazon.com/Patterns-Enterprise-Application-Architecture-Martin/dp/0321127420)
+!NOTES
+# TODO: Finish this list from links in the preso if I have time!
