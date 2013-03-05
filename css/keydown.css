@@ -114,6 +114,8 @@ body {
         background-image: url(../images/yo_dawg_orm2-16x9.jpg); }
       .keydown.deck-container .slide.full-background.repository_pattern-16x9 {
         background-image: url(../images/repository_pattern-16x9.png); }
+      .keydown.deck-container .slide.full-background.datamapper {
+        background-image: url(../images/datamapper.jpg); }
       .keydown.deck-container .slide.full-background h1 {
         display: inline;
         position: absolute;

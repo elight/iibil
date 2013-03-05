@@ -6,13 +6,14 @@
 ## [http://tripledogdare.net](http://tripledogdare.net)
 ## [evan.light@tripledogdare.net](mailto:evan.light@tripledogdare.net)
 
-
 !SLIDE middle
 }}} images/stuff_i_do-16x9.png
 
 !SLIDE
 # "[Use Rails until it hurts](http://evan.tiggerpalace.com/articles/2012/11/21/use-rails-until-it-hurts/)"
-!NOTES
+
+!SLIDE
+# Martin Fowler's [Patterns of Enterprise Application Architecture](http://www.amazon.com/gp/product/0321127420/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0321127420&linkCode=as2&tag=hipphack-20)
 
 !SLIDE 
     I have a set of alarm bells that go off when people say, "Always do this".
@@ -152,7 +153,7 @@ GOTO 1
 
 !SLIDE
 # Vox populi, vox Dei 
-## persistence and domain logic should not coexist in a Rails app
+## Persistence and domain logic should not coexist in a model class
 
 !SLIDE
 # [Active Record](http://www.martinfowler.com/eaaCatalog/activeRecord.html)
@@ -161,6 +162,7 @@ GOTO 1
 
 !SLIDE 
     I have a set of alarm bells that go off when people say, "Always do this".
+-- Yep, still Martin Fowler
 
 !SLIDE
 # Are we doing it wrong?
@@ -208,6 +210,9 @@ GOTO 1
 -- Fowler, Refactoring
 
 !SLIDE
+# "Every time you break one thing into two pieces, you have more things to manage."
+
+!SLIDE
 # Managing software complexity is hard
 # &nbsp;
 ## So have another beer!
@@ -236,7 +241,8 @@ end
 @@@
 
 !SLIDE
-# Domain Model
+# Domain Model 
+### (sort of...)
 # &nbsp;
 @@@ ruby
 class Order
@@ -266,6 +272,8 @@ Edr::Registry.define do
   map Item, ItemData
 end
 @@@
+!NOTES
+# This could be accomplished implicitly via a naming standard for the classes and reflection
 
 !SLIDE
 # Repository
@@ -278,20 +286,52 @@ module OrderRepository
   def self.find_by_amount amount
     where(amount: amount)
   end
-enhttp://cdn.memegenerator.net/instances/400x/35732239.jpgd
+end
 @@@
 
 !SLIDE
+# Redesign [edr](http://github.com/nulogy/edr) to automate more via reflection
+## PDI
+
+!SLIDE top-left
+# Why not [DataMapper](http://datamapper.org)?
+}}} images/datamapper.jpg
+
+!SLIDE
 # [DataMapper](http://datamapper.org) is not a true [Data Mapper](http://martinfowler.com/eaaCatalog/dataMapper.html)
+### It's actually an Active Record
+###### Confused yet?
 
 !SLIDE
 # [DataMapper 2](https://github.com/datamapper) is still WIP
 # &nbsp;
 ###### For instance, DM2 doesn't yet have an official [Unit of Work](http://martinfowler.com/eaaCatalog/unitOfWork.html) implementation
 
+!SLIDE
+# [DataMapper 2](https://github.com/datamapper) is always looking for contributors
+### Contact [@dkubb](http://twitter.com/dkubb) or
+### or dkubb on #datamapper on freenode IRC
 
+!SLIDE
+# NEW UNEDITED CONTENT FOLLOWS
 
+!SLIDE
+# Vox populi, vox Dei 
+## Rails templating sucks
 
+!SLIDE
+# Really, most templating ***still*** sucks
+
+!SLIDE
+    [C]ommon [templating] implementations make it too easy to put complicated logic in the page thus making it hard to maintain ... [and] to test...
+-- Fowler, POEAA
+
+!SLIDE
+# [Presenters and Decorators: A Code Tour](http://www.confreaks.com/videos/884-railsconf2012-presenters-and-decorators-a-code-tour) by [Mike Moore](http://twitter.com/blowmage)
+# [Fat Models Aren't Enough](http://blip.tv/rubynation/jeff-casimir-fat-models-aren-t-enough-5562605)
+
+!SLIDE
+# JUNK DRAWER FOLLOWS
 
 !SLIDE
 # When and how do we use these newer patterns?
