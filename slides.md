@@ -8,7 +8,7 @@
 
 
 !SLIDE middle
-}}} images/stuff_i_do.png
+}}} images/stuff_i_do-16x9.png
 
 !SLIDE
 # "[Use Rails until it hurts](http://evan.tiggerpalace.com/articles/2012/11/21/use-rails-until-it-hurts/)"
@@ -49,7 +49,7 @@
 # They're bleeding edge
 
 !SLIDE bottom-right
-}}} images/jarjar.jpg
+}}} images/jarjar-16x9.jpg
 # If it bleeds, it leads
 
 !SLIDE
@@ -67,7 +67,7 @@
 -- [Alan Kay](http://queue.acm.org/detail.cfm?id=1039523)
 
 !SLIDE
-# New tools and patterns:
+# New patterns and tools:
 # our pop culture
 !NOTES
 # Less reliable due to being untried, less tried, or less understood
@@ -79,19 +79,19 @@
 ##### [Source: Meriam-Webster](http://www.merriam-webster.com/dictionary/pattern)
 
 !SLIDE
+# If it can be imitated
+# maybe it can be automated
+
+!SLIDE
 # Step 1
 # Identify practice
 
 !SLIDE
 # Step 2
-# Name practice
+# Name practice as pattern
 
 !SLIDE
 # Pattern ends here
-
-!SLIDE
-# But then we automate
-# what we can predict
 
 !SLIDE
 # Step 3
@@ -121,16 +121,12 @@ GOTO 1
 ```
 
 !SLIDE
-# PATTERN (software)
-## noun /ˈpatərn/
-## A set of concepts outlining a partial solution to a common technical problem
-###### Source: Me
-
-!SLIDE
 # Rails
+## Automated patterns
 
 !SLIDE
-# Rais as POEAA patterns
+# Rais patterns
+#### on the surface
 ## Front Controller
 ## Model View Controller
 ## Active Record
@@ -146,40 +142,46 @@ GOTO 1
 ## [Service Object](http://jamesgolick.com/2010/3/14/crazy-heretical-and-awesome-the-way-i-write-rails-apps.html) ([gem](https://github.com/bitlove/objectify))
 
 !SLIDE
-# Layering
-## e.g., Presenters/Exhibits as layer between Model and View in MVC.
-!NOTES
-TODO: Discuss how layering, ultimatley what these tools offer  simplifies managing a complex problem but sometimes with the cost of cascading changes across multiple layers
-TODO: Cascading changes are additional complexity
+# Where did all of these come from?
+
+!SLIDE
+# See Step 5: the failings of Rails
+
+!SLIDE
+# What's wrong with Rails?
+
+!SLIDE
+# Vox populi, vox Dei 
+## persistence and domain logic should not coexist in a Rails app
 
 !SLIDE
 # [Active Record](http://www.martinfowler.com/eaaCatalog/activeRecord.html)
     An object that wraps a row in a database table or view, encapsulates the database access, and adds domain logic on that data.
-# -- POEAA
+-- Fowler, POEAA
 
-!SLIDE
-### Any non-trivial Rails app contains either/both
-### bloated ActiveRecord::Base subclasses 
-### and
-### non-ActiveRecord domain model classes
-
-!SLIDE
-### Vox populi
-# persistence and domain logic 
-# should not coexist in a Rails app
+!SLIDE 
+    I have a set of alarm bells that go off when people say, "Always do this".
 
 !SLIDE
 # Are we doing it wrong?
     If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer of code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
--- Martin Fowler, POEAA
+-- Fowler, POEAA
 
 !SLIDE
-# "If the mapping is complex,
-# Data Mapper works better..."
+# "If the mapping is simple, Active Record does the ... job"
+
+!SLIDE
+# "If the mapping is complex, Data Mapper works better..."
+
+!SLIDE
+# Simple? Complex?
+
+!SLIDE
+# Heuristic
 
 !SLIDE top-left
-# Possible Solution: Data Mapper
-}}} images/data_mapper.png
+# Data Mapper
+}}} images/data_mapper-16x9.png
 
 !SLIDE
 # Clear separation between
@@ -188,25 +190,35 @@ TODO: Cascading changes are additional complexity
 ## model
 
 !SLIDE
-# What's keeping us?
+# Can we use Active Record as part of a Data Mapper?
 
 !SLIDE
-# Can we use ActiveRecord as a Data Mapper?
+}}} images/yo_dawg_orm2-16x9.jpg
 
-!SLIDE
+!SLIDE bottom-right
 # [Repository pattern](http://martinfowler.com/eaaCatalog/repository.html)
-## well... sort of
+}}} images/repository_pattern-16x9.png
+
+!SLIDE
+# Layering
+
+!SLIDE
+# The Cost of Indirection
+    Refactoring tends to break big objects into several smaller ones and big methods into several smaller ones.  Indirection is a two-edged sword... Every time you break one thing into two pieces, you have more things to manage. It can also make a program harder to read as an object delegates to an object delegating to an object. So you'd like to minimize indirection.
+-- Fowler, Refactoring
+
+!SLIDE
+# Managing software complexity is hard
+# &nbsp;
+## So have another beer!
 
 !SLIDE
 # [edr](http://github.com/nulogy/edr)
 # &nbsp;
 ###### See [Building Rich Domain Models in Rails. Separating Persistence.](http://engineering.nulogy.com/posts/building-rich-domain-models-in-rails-separating-persistence)
-
-!SLIDE
-}}} images/lipstick_on_a_pig.jpg::DailySaving::::http://daily-saving.blogspot.com/2010/11/dont-fall-for-lipstick-on-pig-its-still.html
-
-!SLIDE
-# ActiveRecord is *not* a pig
+!NOTES
+# "Poor-man's" Data Mapper (until DM2 is ready)
+# Refactor to this from a "fat model" ActiveRecord class 
 
 !SLIDE
 # ActiveRecord
@@ -239,6 +251,11 @@ class Order
   end
 end
 @@@
+!NOTES
+# The above could be generated via reflection
+# Domain Model could then just be a Domain Model
+# maybe EDR::Model < ActiveRecord::Base
+# In reality, it could reopen the EDR::Model subclass
 
 !SLIDE
 # Domain Model to ActiveRecord
@@ -261,7 +278,7 @@ module OrderRepository
   def self.find_by_amount amount
     where(amount: amount)
   end
-end
+enhttp://cdn.memegenerator.net/instances/400x/35732239.jpgd
 @@@
 
 !SLIDE

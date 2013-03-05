@@ -39,7 +39,7 @@
   </div>
   <div class='spacer bottom'></div>
 </section>
-    <section class='full-background middle slide stuff_i_do'>
+    <section class='full-background middle slide stuff_i_do-16x9'>
       <div class='spacer top'></div>
       <div class='content'>
         
@@ -118,7 +118,7 @@
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='bottom-right full-background jarjar slide'>
+    <section class='bottom-right full-background jarjar-16x9 slide'>
       <div class='spacer top'></div>
       <div class='content'>
         <h1>If it bleeds, it leads</h1>
@@ -151,7 +151,7 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>New tools and patterns:</h1>
+        <h1>New patterns and tools:</h1>
         
         <h1>our pop culture</h1>
       </div>
@@ -173,6 +173,15 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
+        <h1>If it can be imitated</h1>
+        
+        <h1>maybe it can be automated</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
         <h1>Step 1</h1>
         
         <h1>Identify practice</h1>
@@ -184,7 +193,7 @@
       <div class='content'>
         <h1>Step 2</h1>
         
-        <h1>Name practice</h1>
+        <h1>Name practice as pattern</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -195,15 +204,6 @@
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='slide'>
-  <div class='spacer top'></div>
-  <div class='content'>
-    <h1>But then we automate</h1>
-
-<h1>what we can predict</h1>
-  </div>
-  <div class='spacer bottom'></div>
-</section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
@@ -245,27 +245,18 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>PATTERN (software)</h1>
-        
-        <h2>noun /ˈpatərn/</h2>
-        
-        <h2>A set of concepts outlining a partial solution to a common technical problem</h2>
-        
-        <h6>Source: Me</h6>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
         <h1>Rails</h1>
+        
+        <h2>Automated patterns</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Rais as POEAA patterns</h1>
+        <h1>Rais patterns</h1>
+        
+        <h4>on the surface</h4>
         
         <h2>Front Controller</h2>
         
@@ -297,14 +288,35 @@ GOTO 1
   <div class='spacer bottom'></div>
 </section>
     <section class='slide'>
-  <div class='spacer top'></div>
-  <div class='content'>
-    <h1>Layering</h1>
-
-<h2>e.g., Presenters/Exhibits as layer between Model and View in MVC.</h2>
-  </div>
-  <div class='spacer bottom'></div>
-</section>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Where did all of these come from?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>See Step 5: the failings of Rails</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>What's wrong with Rails?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Vox populi, vox Dei</h1>
+        
+        <h2>persistence and domain logic should not coexist in a Rails app</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
     <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
@@ -313,34 +325,18 @@ GOTO 1
 <pre><code>An object that wraps a row in a database table or view, encapsulates the database access, and adds domain logic on that data.
 </code></pre>
 
-<h1>-- POEAA</h1>
+<p>-- Fowler, POEAA</p>
   </div>
   <div class='spacer bottom'></div>
 </section>
     <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h3>Any non-trivial Rails app contains either/both</h3>
-        
-        <h3>bloated ActiveRecord::Base subclasses</h3>
-        
-        <h3>and</h3>
-        
-        <h3>non-ActiveRecord domain model classes</h3>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h3>Vox populi</h3>
-        
-        <h1>persistence and domain logic</h1>
-        
-        <h1>should not coexist in a Rails app</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <pre><code>I have a set of alarm bells that go off when people say, "Always do this".
+</code></pre>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
     <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
@@ -349,23 +345,42 @@ GOTO 1
 <pre><code>If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer of code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
 </code></pre>
 
-<p>-- Martin Fowler, POEAA</p>
+<p>-- Fowler, POEAA</p>
   </div>
   <div class='spacer bottom'></div>
 </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>"If the mapping is complex,</h1>
-        
-        <h1>Data Mapper works better..."</h1>
+        <h1>"If the mapping is simple, Active Record does the ... job"</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='data_mapper full-background slide top-left'>
+    <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Possible Solution: Data Mapper</h1>
+        <h1>"If the mapping is complex, Data Mapper works better..."</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Simple? Complex?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Heuristic</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='data_mapper-16x9 full-background slide top-left'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Data Mapper</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -385,23 +400,51 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>What's keeping us?</h1>
+        <h1>Can we use Active Record as part of a Data Mapper?</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='slide'>
+    <section class='full-background slide yo_dawg_orm2-16x9'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Can we use ActiveRecord as a Data Mapper?</h1>
+        
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='slide'>
+    <section class='bottom-right full-background repository_pattern-16x9 slide'>
       <div class='spacer top'></div>
       <div class='content'>
         <h1><a href="http://martinfowler.com/eaaCatalog/repository.html">Repository pattern</a></h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Layering</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>The Cost of Indirection</h1>
+
+<pre><code>Refactoring tends to break big objects into several smaller ones and big methods into several smaller ones.  Indirection is a two-edged sword... Every time you break one thing into two pieces, you have more things to manage. It can also make a program harder to read as an object delegates to an object delegating to an object. So you'd like to minimize indirection.
+</code></pre>
+
+<p>-- Fowler, Refactoring</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Managing software complexity is hard</h1>
         
-        <h2>well... sort of</h2>
+        <h1>&nbsp;</h1>
+        
+        <h2>So have another beer!</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -413,23 +456,6 @@ GOTO 1
         <h1>&nbsp;</h1>
         
         <h6>See <a href="http://engineering.nulogy.com/posts/building-rich-domain-models-in-rails-separating-persistence">Building Rich Domain Models in Rails. Separating Persistence.</a></h6>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='full-background lipstick_on_a_pig slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        
-      </div>
-      <div class='spacer bottom'></div>
-      <div class='attribution '>
-        <a href='http://daily-saving.blogspot.com/2010/11/dont-fall-for-lipstick-on-pig-its-still.html' target='_blank'>DailySaving</a>
-      </div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>ActiveRecord is <em>not</em> a pig</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -476,7 +502,7 @@ GOTO 1
     
     <h1>&nbsp;</h1>
     
-    <p><textarea class='code' display='none' mode='ruby'>module OrderRepository&#x000A;  extend Edr::AR::Repository&#x000A;  set_model_class Order&#x000A;	&#x000A;  def self.find_by_amount amount&#x000A;    where(amount: amount)&#x000A;  end&#x000A;end</textarea>
+    <p><textarea class='code' display='none' mode='ruby'>module OrderRepository&#x000A;  extend Edr::AR::Repository&#x000A;  set_model_class Order&#x000A;	&#x000A;  def self.find_by_amount amount&#x000A;    where(amount: amount)&#x000A;  end&#x000A;enhttp://cdn.memegenerator.net/instances/400x/35732239.jpgd</textarea>
 </p>
   </div>
   <div class='spacer bottom'></div>
