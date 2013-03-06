@@ -135,7 +135,7 @@ GOTO 1
 
 !SLIDE
 # Post-Rails Rails Patterns
-## [Presenter](http://blog.jayfields.com/2007/03/rails-presenter-pattern.html) ([gem](https://github.com/jcasimir/draper))
+## [Presenter](http://blog.jayfields.com/2007/03/rails-presenter-pattern.html) ([gem](https://github.com/drapergem/draper))
 ## [Exhibit](http://objectsonrails.com/) ([gem](https://github.com/objects-on-rails/display-case))
 ## [Form Objects](http://pivotallabs.com/form-backing-objects-for-fun-and-profit/) ([gem](https://github.com/ClearFit/redtape))
 ## Policy Objects ([gem](https://github.com/bitlove/objectify))
@@ -166,7 +166,13 @@ GOTO 1
 
 !SLIDE
 # Are we doing it wrong?
-    If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer of code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
+    If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer  def show(args)
+	    user    = args[:user]
+		    @items  = user.items_in_cart
+			
+			    render  # renders show.html.haml
+				  end
+				  endof code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
 -- Fowler, POEAA
 
 !SLIDE
@@ -330,6 +336,93 @@ end
 # Presenters, Decorators, and View Models
 ## [Presenters and Decorators: A Code Tour](http://www.confreaks.com/videos/884-railsconf2012-presenters-and-decorators-a-code-tour) by [Mike Moore](http://twitter.com/blowmage)
 ## [Fat Models Aren't Enough](http://blip.tv/rubynation/jeff-casimir-fat-models-aren-t-enough-5562605) by [Jeff Casimir](http://twitter.com/jcasimir)
+!NOTES
+# These techniques and tools can help but maybe we'd benefit from something more turtles all the way down?
+
+!SLIDE
+# [Cells](https://github.com/apotonick/cells)
+
+!SLIDE
+# Template
+# &nbsp;
+@@@ ruby
+<div id="header">
+  <%= render_cell :cart, :show, :user => @current_user %>
+@@@
+
+!SLIDE
+# Cell
+### Look familiar?
+### &nbsp;
+``` ruby
+class CartCell < Cell::Rails
+  def show(args)
+    user    = args[:user]
+    @items  = user.items_in_cart
+		  
+    render
+  end
+end
+```
+!NOTES
+# Dabbled with cells
+# Call to render is currently required
+# ***Almost*** turtles all the way down
+
+!SLIDE
+# Model View Controller Pattern
+
+!SLIDE
+# Are Cells better than Partials?
+
+!SLIDE
+# The Layering hobgoblin
+
+!SLIDE
+# What's great about Rails?
+
+!SLIDE
+# Constraints
+
+!SLIDE
+# Fewer heuristic decisions
+
+!SLIDE
+# When improving upon Rails
+# Can we be ***more Rails than Rails?***
+
+
+!SLIDE
+# Advancing the field requires experimentation
+
+!SLIDE
+# Many of you are experts
+
+!SLIDE
+# Many of you aren't
+
+!SLIDE
+# Promoting ideas too early 
+# can mislead the community
+
+!SLIDE
+# Be careful which ideas you promote
+
+!SLIDE
+# Writing software is difficult
+# &nbsp;
+# Let's do more to make it accessible
+
+!SLIDE
+# Tools that can help you now
+## Cells: Model View Controller Pattern
+## Draper: Decorator Pattern
+
+!SLIDE
+# For the future
+### and could use your help
+## DataMapper 2: Data Mapper Pattern
+## Edr: Repository Pattern
 
 !SLIDE
 # JUNK DRAWER FOLLOWS

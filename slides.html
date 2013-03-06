@@ -280,7 +280,7 @@ GOTO 1
   <div class='content'>
     <h1>Post-Rails Rails Patterns</h1>
 
-<h2><a href="http://blog.jayfields.com/2007/03/rails-presenter-pattern.html">Presenter</a> (<a href="https://github.com/jcasimir/draper">gem</a>)</h2>
+<h2><a href="http://blog.jayfields.com/2007/03/rails-presenter-pattern.html">Presenter</a> (<a href="https://github.com/drapergem/draper">gem</a>)</h2>
 
 <h2><a href="http://objectsonrails.com/">Exhibit</a> (<a href="https://github.com/objects-on-rails/display-case">gem</a>)</h2>
 
@@ -351,7 +351,13 @@ GOTO 1
   <div class='content'>
     <h1>Are we doing it wrong?</h1>
 
-<pre><code>If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer of code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
+<pre><code>If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer  def show(args)
+    user    = args[:user]
+        @items  = user.items_in_cart
+
+            render  # renders show.html.haml
+              end
+              endof code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
 </code></pre>
 
 <p>-- Fowler, POEAA</p>
@@ -618,6 +624,162 @@ GOTO 1
   </div>
   <div class='spacer bottom'></div>
 </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="https://github.com/apotonick/cells">Cells</a></h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Template</h1>
+    
+    <h1>&nbsp;</h1>
+    
+    <p><textarea class='code' display='none' mode='ruby'><div id="header">&#x000A;  <%= render_cell :cart, :show, :user => @current_user %></textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Cell</h1>
+    
+    <h3>Look familiar?</h3>
+    
+    <h3>&nbsp;</h3>
+    
+    <p><textarea class='code' display='none' mode='ruby'>class CartCell < Cell::Rails&#x000A;  def show(args)&#x000A;    user    = args[:user]&#x000A;    @items  = user.items_in_cart&#x000A;		  &#x000A;    render&#x000A;  end&#x000A;end</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Model View Controller Pattern</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Are Cells better than Partials?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>The Layering hobgoblin</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>What's great about Rails?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Constraints</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Fewer heuristic decisions</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>When improving upon Rails</h1>
+        
+        <h1>Can we be <strong><em>more Rails than Rails?</em></strong></h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Advancing the field requires experimentation</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Many of you are experts</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Many of you aren't</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Promoting ideas too early</h1>
+        
+        <h1>can mislead the community</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Be careful which ideas you promote</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Writing software is difficult</h1>
+        
+        <h1>&nbsp;</h1>
+        
+        <h1>Let's do more to make it accessible</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Tools that can help you now</h1>
+        
+        <h2>Cells: Model View Controller Pattern</h2>
+        
+        <h2>Draper: Decorator Pattern</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>For the future</h1>
+        
+        <h3>and could use your help</h3>
+        
+        <h2>DataMapper 2: Data Mapper Pattern</h2>
+        
+        <h2>Edr: Repository Pattern</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
