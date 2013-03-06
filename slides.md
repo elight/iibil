@@ -327,8 +327,9 @@ end
 -- Fowler, POEAA
 
 !SLIDE
-# [Presenters and Decorators: A Code Tour](http://www.confreaks.com/videos/884-railsconf2012-presenters-and-decorators-a-code-tour) by [Mike Moore](http://twitter.com/blowmage)
-# [Fat Models Aren't Enough](http://blip.tv/rubynation/jeff-casimir-fat-models-aren-t-enough-5562605)
+# Presenters, Decorators, and View Models
+## [Presenters and Decorators: A Code Tour](http://www.confreaks.com/videos/884-railsconf2012-presenters-and-decorators-a-code-tour) by [Mike Moore](http://twitter.com/blowmage)
+## [Fat Models Aren't Enough](http://blip.tv/rubynation/jeff-casimir-fat-models-aren-t-enough-5562605) by [Jeff Casimir](http://twitter.com/jcasimir)
 
 !SLIDE
 # JUNK DRAWER FOLLOWS
