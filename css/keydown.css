@@ -110,6 +110,8 @@ body {
         background-image: url(../images/duty_calls-16x9.png); }
       .keydown.deck-container .slide.full-background.all-the-things-16x9 {
         background-image: url(../images/all-the-things-16x9.jpg); }
+      .keydown.deck-container .slide.full-background.opml {
+        background-image: url(../images/opml.png); }
       .keydown.deck-container .slide.full-background.research-everywhere-16x9 {
         background-image: url(../images/research-everywhere-16x9.jpg); }
       .keydown.deck-container .slide.full-background.jarjar-16x9 {
@@ -118,16 +120,18 @@ body {
         background-image: url(../images/bones-16x9.jpg); }
       .keydown.deck-container .slide.full-background.rowdatagateway-16x9 {
         background-image: url(../images/rowdatagateway-16x9.png); }
+      .keydown.deck-container .slide.full-background.fowler {
+        background-image: url(../images/fowler.jpg); }
       .keydown.deck-container .slide.full-background.data_mapper-16x9 {
         background-image: url(../images/data_mapper-16x9.png); }
       .keydown.deck-container .slide.full-background.yo_dawg_orm2-16x9 {
         background-image: url(../images/yo_dawg_orm2-16x9.jpg); }
+      .keydown.deck-container .slide.full-background.scotty {
+        background-image: url(../images/scotty.png); }
       .keydown.deck-container .slide.full-background.repository_pattern-16x9 {
         background-image: url(../images/repository_pattern-16x9.png); }
       .keydown.deck-container .slide.full-background.datamapper {
         background-image: url(../images/datamapper.jpg); }
-      .keydown.deck-container .slide.full-background.jessica {
-        background-image: url(../images/jessica.png); }
       .keydown.deck-container .slide.full-background h1 {
         display: inline;
         position: absolute;

@@ -43,13 +43,17 @@
 !SLIDE
 # Examples
 !NOTES
-# Shortcuts: Controller-View tight coupling on intance variables, for example
+# Shortcuts: Controller-View tight coupling on intance variables
 # ActiveRecord: domain logic-persistence coupling
 
 !SLIDE
 ## What about the remaining 20%?
-# Which gem do I use??
-# Which pattern do I use??
+# Which gem do I use?
+# Which pattern do I use?
+
+!SLIDE top-right
+# This is how I know
+}}} images/opml.png
 
 !SLIDE
 # "It depends"
@@ -69,7 +73,6 @@
 
 !SLIDE 
 # Anecdotes suck as evidence...
-### I completely agree with Sarah Mei here
 
 !SLIDE
 }}} images/research-everywhere-16x9.jpg
@@ -136,9 +139,6 @@
 # Ruby community pop culture
 !NOTES
 # Less reliable due to being untried, less tried, or less understood
-
-!SLIDE
-}}} images/bones-16x9.jpg
 
 !SLIDE
 # PATTERN, noun
@@ -218,8 +218,11 @@ GOTO 1
 ## etc., etc. ...
 
 !SLIDE
-## Why?
-# See Step 5: the failings of Rails
+# Why?
+## See Step 5: the failings of Rails
+
+!SLIDE
+}}} images/bones-16x9.jpg
 
 !SLIDE
 # What's wrong with Rails?
@@ -240,7 +243,7 @@ GOTO 1
 <cite>-- Fowler, POEAA</cite>
 
 !SLIDE bottom-left
-# Prevailing wisdom says to do this
+# But prevailing wisdom says to do this
 }}} images/rowdatagateway-16x9.png
 
 !SLIDE
@@ -249,20 +252,14 @@ GOTO 1
 ## [Row Data Gateway](http://martinfowler.com/eaaCatalog/rowDataGateway.htm)
 #### Think of it as ActiveRecord minus domain logic
 
-!SLIDE 
-> I have a set of alarm bells that go off when people say, "Always do this".
-
-<cite>-- Yep, still Martin Fowler</cite>
-
-!SLIDE
-# Instead of fighting Rails
-# can we be ***more Rails than Rails?***
-
 !SLIDE
 # ActiveRecord often isn't the best fit
 > If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer of code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
 
 <cite>-- Even more Fowler, POEAA</cite>
+
+!SLIDE
+}}} images/fowler.jpg
 
 !SLIDE
 # "If the mapping is simple, 
@@ -294,10 +291,6 @@ GOTO 1
 !SLIDE
 }}} images/yo_dawg_orm2-16x9.jpg
 
-!SLIDE bottom-left
-# [Repository](http://martinfowler.com/eaaCatalog/repository.html)
-}}} images/repository_pattern-16x9.png
-
 !SLIDE
 # Layering is a two-edged sword
 > Layers encapsulate some, but not all, things well.  As a result you sometimes get cascading changes.  The classic example of this in a layered enterprise application is adding a field that needs to display on the UI, must be in the database, and thus must be added to every layer in between.
@@ -320,7 +313,15 @@ GOTO 1
 !SLIDE
 # Managing software complexity is hard
 # &nbsp;
-## So have another beer!
+## Fuck it.
+## Let's go have a dram
+
+!SLIDE
+}}} images/scotty.png
+
+!SLIDE bottom-left
+# [Repository](http://martinfowler.com/eaaCatalog/repository.html)
+}}} images/repository_pattern-16x9.png
 
 !SLIDE
 # [edr](http://github.com/nulogy/edr)
@@ -352,7 +353,7 @@ end
 @@@ ruby
 class Order
   include Edr::Model
-e
+
   fields :id, :amount, :deliver_at
 
   wrap_associations :items
@@ -397,26 +398,20 @@ end
 !SLIDE
 # Redesign [edr](http://github.com/nulogy/edr) API for terseness
 # via reflection
-## PDI
+## see my [fork](https://github.com/elight/edr)
+### a (slow) work in progress
 
 !SLIDE top-left
 # Why not [DataMapper](http://datamapper.org)?
 }}} images/datamapper.jpg
 
-!SLIDE bottom-right
-# It's all Jessica's fault
-}}} images/jessica.png
-
 !SLIDE
-# And because
 # [DataMapper](http://datamapper.org) is not a true [Data Mapper](http://martinfowler.com/eaaCatalog/dataMapper.html)
 ### It's actually an Active Record
 ###### Confused yet?
 
 !SLIDE
-# [DataMapper 2](https://github.com/datamapper) is still WIP
-# &nbsp;
-#### For instance, DM2 doesn't yet have an official [Unit of Work](http://martinfowler.com/eaaCatalog/unitOfWork.html) implementation
+# [DataMapper 2](https://github.com/datamapper) ***is*** a true Data Mapper
 
 !SLIDE
 # [DataMapper 2](https://github.com/datamapper) is always looking for contributors
@@ -492,14 +487,6 @@ end
 ## Cells
 
 !SLIDE
-# But also
-# be careful which ideas you promote
-
-!SLIDE
-# Consider your audience
-## The average developer is not as talented as you are
-
-!SLIDE
 # Tools that can help you now
 ## Cells: Model View Controller Pattern
 ## Draper: Decorator Pattern
@@ -507,8 +494,9 @@ end
 !SLIDE
 # For the future
 ### and could use your help
+## Edr: Repository Pattern 
 ## DataMapper 2: Data Mapper Pattern
-## Edr: Repository Pattern
+
 
 
 !SLIDE middle

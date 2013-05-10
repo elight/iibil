@@ -102,9 +102,16 @@
       <div class='content'>
         <h2>What about the remaining 20%?</h2>
         
-        <h1>Which gem do I use??</h1>
+        <h1>Which gem do I use?</h1>
         
-        <h1>Which pattern do I use??</h1>
+        <h1>Which pattern do I use?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='full-background opml slide top-right'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>This is how I know</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -138,8 +145,6 @@
       <div class='spacer top'></div>
       <div class='content'>
         <h1>Anecdotes suck as evidence...</h1>
-        
-        <h3>I completely agree with Sarah Mei here</h3>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -230,13 +235,6 @@
         <h1>New patterns and tools:</h1>
         
         <h1>Ruby community pop culture</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='bones-16x9 full-background slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -386,9 +384,16 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h2>Why?</h2>
+        <h1>Why?</h1>
         
-        <h1>See Step 5: the failings of Rails</h1>
+        <h2>See Step 5: the failings of Rails</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bones-16x9 full-background slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -428,7 +433,7 @@ GOTO 1
     <section class='bottom-left full-background rowdatagateway-16x9 slide'>
   <div class='spacer top'></div>
   <div class='content'>
-    <h1>Prevailing wisdom says to do this</h1>
+    <h1>But prevailing wisdom says to do this</h1>
   </div>
   <div class='spacer bottom'></div>
 </section>
@@ -446,24 +451,6 @@ GOTO 1
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <blockquote><p>I have a set of alarm bells that go off when people say, "Always do this".</p></blockquote>
-        
-        <p><cite>-- Yep, still Martin Fowler</cite></p>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Instead of fighting Rails</h1>
-        
-        <h1>can we be <strong><em>more Rails than Rails?</em></strong></h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
     <h1>ActiveRecord often isn't the best fit</h1>
@@ -474,6 +461,13 @@ GOTO 1
   </div>
   <div class='spacer bottom'></div>
 </section>
+    <section class='fowler full-background slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
@@ -540,13 +534,6 @@ GOTO 1
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='bottom-left full-background repository_pattern-16x9 slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1><a href="http://martinfowler.com/eaaCatalog/repository.html">Repository</a></h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
@@ -592,7 +579,23 @@ GOTO 1
         
         <h1>&nbsp;</h1>
         
-        <h2>So have another beer!</h2>
+        <h2>Fuck it.</h2>
+        
+        <h2>Let's go have a dram</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='full-background scotty slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bottom-left full-background repository_pattern-16x9 slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="http://martinfowler.com/eaaCatalog/repository.html">Repository</a></h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -628,7 +631,7 @@ GOTO 1
     
     <h1>&nbsp;</h1>
     
-    <p><textarea class='code' display='none' mode='ruby'>class Order&#x000A;  include Edr::Model&#x000A;e&#x000A;  fields :id, :amount, :deliver_at&#x000A;&#x000A;  wrap_associations :items&#x000A;&#x000A;  def add_item attrs&#x000A;    wrap association(:items).new(attrs)&#x000A;  end&#x000A;end</textarea>
+    <p><textarea class='code' display='none' mode='ruby'>class Order&#x000A;  include Edr::Model&#x000A;&#x000A;  fields :id, :amount, :deliver_at&#x000A;&#x000A;  wrap_associations :items&#x000A;&#x000A;  def add_item attrs&#x000A;    wrap association(:items).new(attrs)&#x000A;  end&#x000A;end</textarea>
 </p>
   </div>
   <div class='spacer bottom'></div>
@@ -664,7 +667,9 @@ GOTO 1
         
         <h1>via reflection</h1>
         
-        <h2>PDI</h2>
+        <h2>see my <a href="https://github.com/elight/edr">fork</a></h2>
+        
+        <h3>a (slow) work in progress</h3>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -675,18 +680,9 @@ GOTO 1
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='bottom-right full-background jessica slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>It's all Jessica's fault</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>And because</h1>
-        
         <h1><a href="http://datamapper.org">DataMapper</a> is not a true <a href="http://martinfowler.com/eaaCatalog/dataMapper.html">Data Mapper</a></h1>
         
         <h3>It's actually an Active Record</h3>
@@ -698,11 +694,7 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1><a href="https://github.com/datamapper">DataMapper 2</a> is still WIP</h1>
-        
-        <h1>&nbsp;</h1>
-        
-        <h4>For instance, DM2 doesn't yet have an official <a href="http://martinfowler.com/eaaCatalog/unitOfWork.html">Unit of Work</a> implementation</h4>
+        <h1><a href="https://github.com/datamapper">DataMapper 2</a> <strong><em>is</em></strong> a true Data Mapper</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -831,24 +823,6 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>But also</h1>
-        
-        <h1>be careful which ideas you promote</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Consider your audience</h1>
-        
-        <h2>The average developer is not as talented as you are</h2>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
         <h1>Tools that can help you now</h1>
         
         <h2>Cells: Model View Controller Pattern</h2>
@@ -864,9 +838,9 @@ GOTO 1
         
         <h3>and could use your help</h3>
         
-        <h2>DataMapper 2: Data Mapper Pattern</h2>
-        
         <h2>Edr: Repository Pattern</h2>
+        
+        <h2>DataMapper 2: Data Mapper Pattern</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
