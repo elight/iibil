@@ -1,25 +1,20 @@
 
 !SLIDE middle
 # Evan Light
-## **<u>Freelance Mentor and Code Janitor</u>**
-## [@elight](http://twitter.com/elight)
-## [http://tripledogdare.net](http://tripledogdare.net)
-## [evan.light@tripledogdare.net](mailto:evan.light@tripledogdare.net)
+# **Developer Tutor and Code Janitor**
+# &nbsp;
+# [@elight](http://twitter.com/elight)
+# [http://tripledogdare.net](http://tripledogdare.net)
+# [evan.light@tripledogdare.net](mailto:evan.light@tripledogdare.net)
 
 !SLIDE middle
 }}} images/stuff_i_do-16x9.png
 
 !SLIDE
-}}} images/duty_calls-16x9.png::Duty Calls::::http://xkcd.com/386/
-!NOTES
-# Why I give presentations
-
-!SLIDE
-# "[Use Rails until it hurts](http://evan.tiggerpalace.com/articles/2012/11/21/use-rails-until-it-hurts/)"
-### how this talk came to be
-!NOTES
-# Often why I write blog posts
-# Blog post several months ago
+# Patterns of Enterprise Application Architecture
+### by Martin Fowler
+### &nbsp;
+# [READ THIS BOOK](http://www.amazon.com/gp/product/0321127420/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0321127420&linkCode=as2&tag=hipphack-20)
 
 !SLIDE
 }}} images/all-the-things-16x9.jpg
@@ -28,6 +23,93 @@
 # Almost anti-Rails
 # Low coupling == good
 # Loose coupling everything? Over-optimization.
+
+!SLIDE
+# Coupling?
+
+!SLIDE
+# Tight coupling example
+## &nbsp;
+@@@ ruby
+class UserController
+  def index
+    @user = User.all
+  end  
+end  
+@@@
+
+!SLIDE
+# (Hypberbolized) Loose coupling example
+## &nbsp;
+@@@ ruby
+class UserController
+  cattr _accessor :finder
+
+  def index
+    @user = finder.all
+  end
+end
+	
+# ... in a config initializer or similar
+UserController.finder = User
+@@@
+
+
+!SLIDE
+# History lesson
+!NOTES
+
+!SLIDE
+# 1995
+## Java: A better C++
+
+!SLIDE
+# 1999
+## Servlets 
+## Enterprise Java Beans
+
+!SLIDE
+# Enterprise Java Beans
+> [a] managed server-side component architecture
+
+> for module construction of ... applications
+
+<cite>-- [Wikipedia](http://en.wikipedia.org/wiki/Enterprise_JavaBeans)</cite>
+
+!SLIDE
+# 2002
+## Spring Framework
+
+!SLIDE
+# Spring Framework
+> an open source application framework and
+
+> inversion of control container for the Java platform
+
+<cite>-- [Wikipedia](http://en.Wikipedia.org/wiki/Spring_Framework)</cite>
+
+!SLIDE
+# 2003ish
+## Java dev becomes commoditized
+## Offshoring, etc.
+
+!SLIDE
+# 2005ish
+## Exodus begins in earnest
+
+!SLIDE
+# Predictors?
+## Overabundance of choices / Inadequate curation
+## Loose coupling fixation
+
+!SLIDE
+# Where is Ruby/Rails now?
+!NOTES
+# Some of our brightest are moving on
+## Clojure
+## JavaScript
+
+
 
 !SLIDE
 # Rails makes ***SMALL*** app development ***FAST***
@@ -47,19 +129,8 @@
 # ActiveRecord: domain logic-persistence coupling
 
 !SLIDE
-## What about the remaining 20%?
-# Which gem do I use?
-# Which pattern do I use?
+# What about the remaining 20%?
 
-!SLIDE top-right
-# This is how I know
-}}} images/opml.png
-
-!SLIDE
-# "It depends"
-## There are too many choices!
-!NOTES
-# Requires an expert
 
 !SLIDE
 # HEURISTIC, noun
@@ -77,6 +148,8 @@
 !SLIDE
 }}} images/research-everywhere-16x9.jpg
 
+!SLIDE
+# Living in a time of over-abundance
 
 !SLIDE
 > Choosing well is especially difficult
@@ -88,36 +161,31 @@
 <cite>-- Barry Schwartz, [The Paradox of Choice](http://www.amazon.com/gp/product/0060005696/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0060005696&linkCode=as2&tag=hipphack-20)</cite>
 
 !SLIDE
-> We would be better off if we embraced certain voluntary constraints
-
-> on our freedom of choice, instead of rebelling against them.
+> We would be better off 
+>
+> if we embraced certain voluntary constraints
+>
+> on our freedom of choice, 
+>
+> instead of rebelling against them.
 
 <cite>-- Barry Schwartz, The Paradox of Choice</cite>
 !NOTES
 # Inevitably, we're confronted with the results of poor choices
 # But we accept expert-imposed constraints by using Rails
 
- 
 
 !SLIDE
 # Available information > Reliable information
-
-!SLIDE
-# More vulnerable to effective advertising
-# than we like to believe
-
-!SLIDE
- > Once you have something that grows faster than education grows, 
- 
- > you're always going to get a pop culture.
- 
- <cite>-- [Alan Kay](http://queue.acm.org/detail.cfm?id=1039523)</cite>
+# &nbsp;
+# Near source > Trusted source
 !NOTES
-# Pop culture is HIGHLY available
-# Our culture lacks heavy commercial marketing
-# But we market our OSS all of the time
-## Blogs
-## Conference talks
+# Schwartz cites studies
+
+
+!SLIDE
+# Vulnerable to effective advertising
+
 
 !SLIDE
 # NEOPHILIA, noun
@@ -130,21 +198,46 @@
 # We kid about our attraction to shiny
 # We're obsessed with the bleeding edge
 
+!SLIDE
+> Once you have something that grows faster than education grows, 
+> 
+> you're always going to get a pop culture.
+ 
+<cite>-- [Alan Kay](http://queue.acm.org/detail.cfm?id=1039523)</cite>
+!NOTES
+# Pop culture is HIGHLY available
+# Our culture lacks heavy commercial marketing
+# But we market our OSS all of the time
+## Blogs
+## Conference talks
+
+
+!SLIDE
+# Our pop culture?
+
+!SLIDE
+## [Presenter](http://blog.jayfields.com/2007/03/rails-presenter-pattern.html) ([gem](https://github.com/drapergem/draper))
+## [Exhibit](http://objectsonrails.com/) ([gem](https://github.com/objects-on-rails/display-case))
+## [Form Object](http://pivotallabs.com/form-backing-objects-for-fun-and-profit/) ([gem](https://github.com/ClearFit/redtape))
+## Policy Object ([gem](https://github.com/bitlove/objectify))
+## [DCI](http://dci-in-ruby.info/) ([gem](https://github.com/saturnflyer/casting))
+## [Service Object](http://jamesgolick.com/2010/3/14/crazy-heretical-and-awesome-the-way-i-write-rails-apps.html) ([gem](https://github.com/bitlove/objectify))
+
+!SLIDE
+}}} images/srbaker.png
+
 !SLIDE bottom-right
 }}} images/jarjar-16x9.jpg::mangaholix::::http://mangaholix.deviantart.com/art/Kriss-HATES-Jar-Jar-Binks-163018356
 # "If it bleeds, it leads"
-
-!SLIDE
-# New patterns and tools:
-# Ruby community pop culture
-!NOTES
-# Less reliable due to being untried, less tried, or less understood
 
 !SLIDE
 # PATTERN, noun
 ## /ˈpatərn/
 ## A form or model proposed for imitation : exemplar.
 ##### [Source: Meriam-Webster](http://www.merriam-webster.com/dictionary/pattern)
+
+!SLIDE
+# The 6 Steps of Patterns
 
 !SLIDE
 # Step 1
@@ -177,7 +270,6 @@
 !SLIDE
 # Step 5
 # Identify failings in tool
-### familiarity breeds contempt
 !NOTES
 # Failings in our current practices lead us to new practices
 # New practices lead to new patterns
@@ -187,50 +279,60 @@
 ```
 GOTO 1
 ```
-### Look for next shiny pattern
 <img src="images/troll.png" style="width: 600px; height: 600px; bottom: 100px; right: 300px; position: absolute"></img>
 
 !SLIDE
-# Rails patterns
+# Rails is made of patterns!
+## Template View
 ## Front Controller
 ## Application Controller
 ## Model View Controller
 ## Active Record 
-#### (note the space between **Active** and **Record**)
-## Template View
 
 !SLIDE
-# Patterns of Enterprise Application Architecture
-### by Martin Fowler
-### &nbsp;
-### If you get nothing else from this presentation...
-# [READ THIS BOOK](http://www.amazon.com/gp/product/0321127420/ref=as_li_ss_tl?ie=UTF8&camp=1789&creative=390957&creativeASIN=0321127420&linkCode=as2&tag=hipphack-20)
+# Where did these come from?
+## Presenter
+## Exhibit
+## Form Object
+## Policy Object
+## DCI
+## Service Object
 
 
 !SLIDE
-# Post-Rails Rails Patterns
-## [Presenter](http://blog.jayfields.com/2007/03/rails-presenter-pattern.html) ([gem](https://github.com/drapergem/draper))
-## [Exhibit](http://objectsonrails.com/) ([gem](https://github.com/objects-on-rails/display-case))
-## [Form Objects](http://pivotallabs.com/form-backing-objects-for-fun-and-profit/) ([gem](https://github.com/ClearFit/redtape))
-## Policy Objects ([gem](https://github.com/bitlove/objectify))
-## [Data Context Interaction a.k.a. "DCI"](http://dci-in-ruby.info/)
-## [Service Object](http://jamesgolick.com/2010/3/14/crazy-heretical-and-awesome-the-way-i-write-rails-apps.html) ([gem](https://github.com/bitlove/objectify))
-## etc., etc. ...
+# See Step 5: the failings of Rails
 
 !SLIDE
-# Why?
-## See Step 5: the failings of Rails
+# But...
+
+!SLIDE
+> Refactoring tends to break big objects into several smaller ones and big methods into several smaller ones.  
+
+<cite>-- Fowler, Refactoring</cite>
+
+!SLIDE
+> Indirection is a two-edged sword... Every time you break one thing into two pieces, you have more things to manage. 
+
+<cite>-- Fowler, Refactoring</cite>
+
+!SLIDE
+> [Indirection] can also make a program harder to read 
+
+> as an object delegates to an object delegating to an object. 
+
+> So you'd like to minimize indirection.
+
+<cite>-- Fowler, Refactoring</cite>
+
+
+!SLIDE
+}}} images/bphogan.png
 
 !SLIDE
 }}} images/bones-16x9.jpg
-
-!SLIDE
-# What's wrong with Rails?
-## A few examples
-
-!SLIDE
-# Vox populi, vox Dei 
-## Persistence and domain logic should not coexist in a model class
+!NOTES
+# PLEASE BE CAREFUL
+# Pop Culture Patterns are still bridging the cashm
 
 !SLIDE
 # [Active Record](http://www.martinfowler.com/eaaCatalog/activeRecord.html)
@@ -242,6 +344,11 @@ GOTO 1
 
 <cite>-- Fowler, POEAA</cite>
 
+!SLIDE
+# Active Record
+# &nbsp;
+# ActiveRecord
+
 !SLIDE bottom-left
 # But prevailing wisdom says to do this
 }}} images/rowdatagateway-16x9.png
@@ -249,11 +356,12 @@ GOTO 1
 !SLIDE
 # There's a pattern for that!
 #### &nbsp;
-## [Row Data Gateway](http://martinfowler.com/eaaCatalog/rowDataGateway.htm)
-#### Think of it as ActiveRecord minus domain logic
+# [Row Data Gateway](http://martinfowler.com/eaaCatalog/rowDataGateway.htm)
+!NOTE
+#ActiveRecord minus business logic
 
 !SLIDE
-# ActiveRecord often isn't the best fit
+# Active Record often isn't the best fit
 > If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer of code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.
 
 <cite>-- Even more Fowler, POEAA</cite>
@@ -270,61 +378,49 @@ GOTO 1
 # Data Mapper works better..."
 
 !SLIDE
-# Simple? Complex?
+# Simple?
+# Complex?
 
 !SLIDE
 # Heuristic
+<img src="images/troll.png" style="width: 600px; height: 600px; bottom: 100px; right: 300px; position: absolute"></img>
+
 
 !SLIDE top-right
 # Data Mapper
 }}} images/data_mapper-16x9.png
 
 !SLIDE
-# Clear separation between
-## source
-## mapping
-## model
+# Separation
+!NOTES
+# Source
+# Mapper
+# Model
+
+!SLIDE top-left
+}}} images/datamapper.jpg
 
 !SLIDE
-# Can we use Active Record as part of a Data Mapper?
+# [DataMapper](http://datamapper.org) is not a true [Data Mapper](http://martinfowler.com/eaaCatalog/dataMapper.html)
+### &nbsp;
+
+!SLIDE
+# It's actually an Active Record
+
+!SLIDE
+# But can we use ActiveRecord as part of a Data Mapper?
 
 !SLIDE
 }}} images/yo_dawg_orm2-16x9.jpg
-
-!SLIDE
-# Layering is a two-edged sword
-> Layers encapsulate some, but not all, things well.  As a result you sometimes get cascading changes.  The classic example of this in a layered enterprise application is adding a field that needs to display on the UI, must be in the database, and thus must be added to every layer in between.
-
-<cite>-- You should be used to seeing Fowler by now, POEAA</cite>
-
-!SLIDE
-# "[Y]ou sometimes get cascading changes"
-
-!SLIDE
-# Indirection is also a two-edged sword
-> Refactoring tends to break big objects into several smaller ones and big methods into several smaller ones.  Indirection is a two-edged sword... Every time you break one thing into two pieces, you have more things to manage. It can also make a program harder to read as an object delegates to an object delegating to an object. So you'd like to minimize indirection.
-
-<cite>-- Fowler, Refactoring</cite>
-
-!SLIDE
-# "Every time you break one thing into two pieces, 
-# you have more things to manage."
-
-!SLIDE
-# Managing software complexity is hard
-# &nbsp;
-## Fuck it.
-## Let's go have a dram
-
-!SLIDE
-}}} images/scotty.png
 
 !SLIDE bottom-left
 # [Repository](http://martinfowler.com/eaaCatalog/repository.html)
 }}} images/repository_pattern-16x9.png
 
 !SLIDE
-# [edr](http://github.com/nulogy/edr)
+# [edr](http://github.com/elight/edr)
+## A step in the right direction
+### ... sort of
 # &nbsp;
 ##### See [Building Rich Domain Models in Rails. Separating Persistence.](http://engineering.nulogy.com/posts/building-rich-domain-models-in-rails-separating-persistence)
 !NOTES
@@ -352,15 +448,11 @@ end
 # &nbsp;
 @@@ ruby
 class Order
-  include Edr::Model
-
-  fields :id, :amount, :deliver_at
-
-  wrap_associations :items
-
   def add_item attrs
-    wrap association(:items).new(attrs)
+    repository.create_item self, attrs
   end
+  
+  # Business logic GOES HERE
 end
 @@@
 !NOTES
@@ -369,17 +461,6 @@ end
 # maybe EDR::Model < ActiveRecord::Base
 # In reality, it could reopen the EDR::Model subclass
 
-!SLIDE
-# Domain Model to ActiveRecord
-# &nbsp;
-@@@ ruby
-Edr::Registry.define do
-  map Order, OrderData
-  map Item, ItemData
-end
-@@@
-!NOTES
-# This could be accomplished implicitly via a naming standard for the classes and reflection
 
 !SLIDE
 # Repository
@@ -396,114 +477,86 @@ end
 @@@
 
 !SLIDE
-# Redesign [edr](http://github.com/nulogy/edr) API for terseness
-# via reflection
-## see my [fork](https://github.com/elight/edr)
-### a (slow) work in progress
-
-!SLIDE top-left
-# Why not [DataMapper](http://datamapper.org)?
-}}} images/datamapper.jpg
+# You probably don't want to try that at home
 
 !SLIDE
-# [DataMapper](http://datamapper.org) is not a true [Data Mapper](http://martinfowler.com/eaaCatalog/dataMapper.html)
-### It's actually an Active Record
-###### Confused yet?
-
-!SLIDE
-# [DataMapper 2](https://github.com/datamapper) ***is*** a true Data Mapper
-
-!SLIDE
-# [DataMapper 2](https://github.com/datamapper) is always looking for contributors
+# What if your models could look something like this?
 # &nbsp;
-### Contact [@dkubb](http://twitter.com/dkubb) or
-### or dkubb on #datamapper on freenode IRC
+```ruby
+class Item
+  include Virtus
+  
+  attribute :item_number,  String
+ 
+  # biz logic here
+end
+
+class Order
+  include Virtus 
+
+  attribute :order_number, String
+  attribute :items,        Array[Item]
+  
+  # here too
+end
+```
 
 !SLIDE
-# Vox populi, vox Dei 
-## Rails templating sucks
-
-!SLIDE
-# Really, ***most*** templating sucks
-
-!SLIDE
-> [C]ommon [templating] implementations make it too easy to put complicated logic in the page thus making it hard to maintain ... [and] to test...
-
-<cite>-- Fowler, POEAA</cite>
-
-!SLIDE
-# Presenters, Decorators, and View Models
-# &nbsp;
-## [**Presenters and Decorators: A Code Tour**](http://www.confreaks.com/videos/884-railsconf2012-presenters-and-decorators-a-code-tour) by [Mike Moore](http://twitter.com/blowmage)
-## [**Fat Models Aren't Enough**](http://blip.tv/rubynation/jeff-casimir-fat-models-aren-t-enough-5562605) by [Jeff Casimir](http://twitter.com/jcasimir)
-!NOTES
-# These techniques and tools can help but maybe we'd benefit from something more turtles all the way down?
-
-!SLIDE
-# [Cells](https://github.com/apotonick/cells)
-# &nbsp;
-### What if we had component views instead of partials?
-
-!SLIDE
-# Template
-# &nbsp;
-@@@ ruby
-<div id="header">
-  <%= render_cell :cart, :show, :user => @current_user %>
-@@@
-
-!SLIDE
-# Cell
-### Very much like a Controller
-### &nbsp;
-``` ruby
-class CartCell < Cell::Rails
-  def show(args)
-    user    = args[:user]
-    @items  = user.items_in_cart
-		  
-    render
+# They can, if you DIY
+```ruby
+class OrderMapper
+  def self.load(row_id)
+    od = OrderData.find(row_id)
+    Order.new(order_number: od.order_number)
+  end
+  
+  def self.dump(order)
+    od = OrderData.lookup(order.order_number)
+    if od
+      od.update_attributes(order.attributes)
+    else
+      OrderData.create!(order.attributes)
+    end
   end
 end
 ```
-!NOTES
-# Dabbled with cells
-# Call to render is currently required
-# ***Almost*** turtles all the way down
 
 !SLIDE
-# Model View Controller Pattern
+}}} images/rom.jpg
 
 !SLIDE
-# Are Cells better than Partials?
+# [ROM](https://github.com/rom-rb) ***will be*** a true Data Mapper
+
 
 !SLIDE
-# The Layering hobgoblin
+# [ROM](https://github.com/rom-rb) is always looking for contributors
+# &nbsp;
+### Contact [@dkubb](http://twitter.com/dkubb) or [@\_solnic\_](http://twitter.com/_solnic_)
+### or dkubb or solnic on #rom-rb on freenode IRC
+
 
 !SLIDE
-# Can we be ***more Rails than Rails?***
-## &nbsp;
-## Data Mapper 2
-## Cells
+# Rails is almost 10 years old
 
 !SLIDE
-# Tools that can help you now
-## Cells: Model View Controller Pattern
-## Draper: Decorator Pattern
+# Rails apps are growing more complex
+# We need more than an 80% framework
 
 !SLIDE
-# For the future
-### and could use your help
-## Edr: Repository Pattern 
-## DataMapper 2: Data Mapper Pattern
+# There are too many choices
+## Patterns and their mplementations
+# &nbsp;
+# We need ***more*** curation
 
+!SLIDE
+# Doing my part:
+## Look to ROM for the backend future
 
+!SLIDE
+# POEAA outlined Rails patterns
+# It also provided alternatives
+# &nbsp;
+# Seek more answers within
 
 !SLIDE middle
 # THANKS!
-# &nbsp;
-## Evan Light
-### **<u>Freelance Mentor and Code Janitor</u>**
-### [@elight](http://twitter.com/elight)
-### [http://tripledogdare.net](http://tripledogdare.net)
-### [evan.light@tripledogdare.net](mailto:evan.light@tripledogdare.net)
