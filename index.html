@@ -29,13 +29,15 @@
   <div class='content'>
     <h1>Evan Light</h1>
 
-<h2><strong><u>Freelance Mentor and Code Janitor</u></strong></h2>
+<h1><strong>Developer Tutor and Code Janitor</strong></h1>
 
-<h2><a href="http://twitter.com/elight">@elight</a></h2>
+<h1>&nbsp;</h1>
 
-<h2><a href="http://tripledogdare.net">http://tripledogdare.net</a></h2>
+<h1><a href="http://twitter.com/elight">@elight</a></h1>
 
-<h2><a href="mailto:evan.light@tripledogdare.net">evan.light@tripledogdare.net</a></h2>
+<h1><a href="http://tripledogdare.net">http://tripledogdare.net</a></h1>
+
+<h1><a href="mailto:evan.light@tripledogdare.net">evan.light@tripledogdare.net</a></h1>
   </div>
   <div class='spacer bottom'></div>
 </section>
@@ -46,29 +48,154 @@
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='duty_calls-16x9 full-background slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        
-      </div>
-      <div class='spacer bottom'></div>
-      <div class='attribution '>
-        <a href='http://xkcd.com/386/' target='_blank'>Duty Calls</a>
-      </div>
-    </section>
     <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>"<a href="http://evan.tiggerpalace.com/articles/2012/11/21/use-rails-until-it-hurts/">Use Rails until it hurts</a>"</h1>
-        
-        <h3>how this talk came to be</h3>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Patterns of Enterprise Application Architecture</h1>
+
+<h3>by Martin Fowler</h3>
+
+<h3>&nbsp;</h3>
+
+<h1><a href="http://www.amazon.com/gp/product/0321127420/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321127420&amp;linkCode=as2&amp;tag=hipphack-20">READ THIS BOOK</a></h1>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
     <section class='all-the-things-16x9 full-background slide'>
       <div class='spacer top'></div>
       <div class='content'>
         
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Coupling?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Tight coupling example</h1>
+    
+    <h2>&nbsp;</h2>
+    
+    <p><textarea class='code' display='none' mode='ruby'>class UserController&#x000A;  def index&#x000A;    @user = User.all&#x000A;  end  &#x000A;end</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>(Hypberbolized) Loose coupling example</h1>
+    
+    <h2>&nbsp;</h2>
+    
+    <p><textarea class='code' display='none' mode='ruby'>class UserController&#x000A;  cattr _accessor :finder&#x000A;&#x000A;  def index&#x000A;    @user = finder.all&#x000A;  end&#x000A;end&#x000A;	&#x000A;# ... in a config initializer or similar&#x000A;UserController.finder = User</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>History lesson</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>1995</h1>
+        
+        <h2>Java: A better C++</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>1999</h1>
+        
+        <h2>Servlets</h2>
+        
+        <h2>Enterprise Java Beans</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Enterprise Java Beans</h1>
+        
+        <blockquote><p>[a] managed server-side component architecture</p>
+        
+        <p>for module construction of ... applications</p></blockquote>
+        
+        <p><cite>-- <a href="http://en.wikipedia.org/wiki/Enterprise_JavaBeans">Wikipedia</a></cite></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>2002</h1>
+        
+        <h2>Spring Framework</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Spring Framework</h1>
+        
+        <blockquote><p>an open source application framework and</p>
+        
+        <p>inversion of control container for the Java platform</p></blockquote>
+        
+        <p><cite>-- <a href="http://en.Wikipedia.org/wiki/Spring_Framework">Wikipedia</a></cite></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>2003ish</h1>
+        
+        <h2>Java dev becomes commoditized</h2>
+        
+        <h2>Offshoring, etc.</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>2005ish</h1>
+        
+        <h2>Exodus begins in earnest</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Predictors?</h1>
+
+<h2>Overabundance of choices / Inadequate curation</h2>
+
+<h2>Loose coupling fixation</h2>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Where is Ruby/Rails now?</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -100,27 +227,7 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h2>What about the remaining 20%?</h2>
-        
-        <h1>Which gem do I use?</h1>
-        
-        <h1>Which pattern do I use?</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='full-background opml slide top-right'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>This is how I know</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>"It depends"</h1>
-        
-        <h2>There are too many choices!</h2>
+        <h1>What about the remaining 20%?</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -156,6 +263,13 @@
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Living in a time of over-abundance</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
     <blockquote><p>Choosing well is especially difficult</p>
@@ -171,9 +285,13 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <blockquote><p>We would be better off if we embraced certain voluntary constraints</p>
+        <blockquote><p>We would be better off</p>
         
-        <p>on our freedom of choice, instead of rebelling against them.</p></blockquote>
+        <p>if we embraced certain voluntary constraints</p>
+        
+        <p>on our freedom of choice,</p>
+        
+        <p>instead of rebelling against them.</p></blockquote>
         
         <p><cite>-- Barry Schwartz, The Paradox of Choice</cite></p>
       </div>
@@ -183,26 +301,17 @@
       <div class='spacer top'></div>
       <div class='content'>
         <h1>Available information > Reliable information</h1>
+        
+        <h1>&nbsp;</h1>
+        
+        <h1>Near source > Trusted source</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>More vulnerable to effective advertising</h1>
-        
-        <h1>than we like to believe</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <blockquote><p>Once you have something that grows faster than education grows,</p>
-        
-        <p>you're always going to get a pop culture.</p></blockquote>
-        
-        <p> <cite>-- <a href="http://queue.acm.org/detail.cfm?id=1039523">Alan Kay</a></cite></p>
+        <h1>Vulnerable to effective advertising</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -219,6 +328,48 @@
       </div>
       <div class='spacer bottom'></div>
     </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <blockquote><p>Once you have something that grows faster than education grows,</p>
+        
+        <p>you're always going to get a pop culture.</p></blockquote>
+        
+        <p><cite>-- <a href="http://queue.acm.org/detail.cfm?id=1039523">Alan Kay</a></cite></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Our pop culture?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2><a href="http://blog.jayfields.com/2007/03/rails-presenter-pattern.html">Presenter</a> (<a href="https://github.com/drapergem/draper">gem</a>)</h2>
+
+<h2><a href="http://objectsonrails.com/">Exhibit</a> (<a href="https://github.com/objects-on-rails/display-case">gem</a>)</h2>
+
+<h2><a href="http://pivotallabs.com/form-backing-objects-for-fun-and-profit/">Form Object</a> (<a href="https://github.com/ClearFit/redtape">gem</a>)</h2>
+
+<h2>Policy Object (<a href="https://github.com/bitlove/objectify">gem</a>)</h2>
+
+<h2><a href="http://dci-in-ruby.info/">DCI</a> (<a href="https://github.com/saturnflyer/casting">gem</a>)</h2>
+
+<h2><a href="http://jamesgolick.com/2010/3/14/crazy-heretical-and-awesome-the-way-i-write-rails-apps.html">Service Object</a> (<a href="https://github.com/bitlove/objectify">gem</a>)</h2>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='full-background slide srbaker'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
     <section class='bottom-right full-background jarjar-16x9 slide'>
       <div class='spacer top'></div>
       <div class='content'>
@@ -232,15 +383,6 @@
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>New patterns and tools:</h1>
-        
-        <h1>Ruby community pop culture</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
         <h1>PATTERN, noun</h1>
         
         <h2>/ˈpatərn/</h2>
@@ -248,6 +390,13 @@
         <h2>A form or model proposed for imitation : exemplar.</h2>
         
         <h5><a href="http://www.merriam-webster.com/dictionary/pattern">Source: Meriam-Webster</a></h5>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>The 6 Steps of Patterns</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -306,8 +455,6 @@
         <h1>Step 5</h1>
         
         <h1>Identify failings in tool</h1>
-        
-        <h3>familiarity breeds contempt</h3>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -318,18 +465,17 @@
 
 <p><code>
 GOTO 1
-</code></p>
-
-<h3>Look for next shiny pattern</h3>
-
-<p><img src="images/troll.png" style="width: 600px; height: 600px; bottom: 100px; right: 300px; position: absolute"></img></p>
+</code>
+<img src="images/troll.png" style="width: 600px; height: 600px; bottom: 100px; right: 300px; position: absolute"></img></p>
   </div>
   <div class='spacer bottom'></div>
 </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Rails patterns</h1>
+        <h1>Rails is made of patterns!</h1>
+        
+        <h2>Template View</h2>
         
         <h2>Front Controller</h2>
         
@@ -338,55 +484,77 @@ GOTO 1
         <h2>Model View Controller</h2>
         
         <h2>Active Record</h2>
-        
-        <h4>(note the space between <strong>Active</strong> and <strong>Record</strong>)</h4>
-        
-        <h2>Template View</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
-    <h1>Patterns of Enterprise Application Architecture</h1>
+    <h1>Where did these come from?</h1>
 
-<h3>by Martin Fowler</h3>
+<h2>Presenter</h2>
 
-<h3>&nbsp;</h3>
+<h2>Exhibit</h2>
 
-<h3>If you get nothing else from this presentation...</h3>
+<h2>Form Object</h2>
 
-<h1><a href="http://www.amazon.com/gp/product/0321127420/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321127420&amp;linkCode=as2&amp;tag=hipphack-20">READ THIS BOOK</a></h1>
-  </div>
-  <div class='spacer bottom'></div>
-</section>
-    <section class='slide'>
-  <div class='spacer top'></div>
-  <div class='content'>
-    <h1>Post-Rails Rails Patterns</h1>
+<h2>Policy Object</h2>
 
-<h2><a href="http://blog.jayfields.com/2007/03/rails-presenter-pattern.html">Presenter</a> (<a href="https://github.com/drapergem/draper">gem</a>)</h2>
+<h2>DCI</h2>
 
-<h2><a href="http://objectsonrails.com/">Exhibit</a> (<a href="https://github.com/objects-on-rails/display-case">gem</a>)</h2>
-
-<h2><a href="http://pivotallabs.com/form-backing-objects-for-fun-and-profit/">Form Objects</a> (<a href="https://github.com/ClearFit/redtape">gem</a>)</h2>
-
-<h2>Policy Objects (<a href="https://github.com/bitlove/objectify">gem</a>)</h2>
-
-<h2><a href="http://dci-in-ruby.info/">Data Context Interaction a.k.a. "DCI"</a></h2>
-
-<h2><a href="http://jamesgolick.com/2010/3/14/crazy-heretical-and-awesome-the-way-i-write-rails-apps.html">Service Object</a> (<a href="https://github.com/bitlove/objectify">gem</a>)</h2>
-
-<h2>etc., etc. ...</h2>
+<h2>Service Object</h2>
   </div>
   <div class='spacer bottom'></div>
 </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Why?</h1>
+        <h1>See Step 5: the failings of Rails</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>But...</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <blockquote><p>Refactoring tends to break big objects into several smaller ones and big methods into several smaller ones.</p></blockquote>
         
-        <h2>See Step 5: the failings of Rails</h2>
+        <p><cite>-- Fowler, Refactoring</cite></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <blockquote><p>Indirection is a two-edged sword... Every time you break one thing into two pieces, you have more things to manage.</p></blockquote>
+        
+        <p><cite>-- Fowler, Refactoring</cite></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <blockquote><p>[Indirection] can also make a program harder to read</p>
+        
+        <p>as an object delegates to an object delegating to an object.</p>
+        
+        <p>So you'd like to minimize indirection.</p></blockquote>
+        
+        <p><cite>-- Fowler, Refactoring</cite></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bphogan full-background slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -394,24 +562,6 @@ GOTO 1
       <div class='spacer top'></div>
       <div class='content'>
         
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>What's wrong with Rails?</h1>
-        
-        <h2>A few examples</h2>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Vox populi, vox Dei</h1>
-        
-        <h2>Persistence and domain logic should not coexist in a model class</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -430,6 +580,17 @@ GOTO 1
       </div>
       <div class='spacer bottom'></div>
     </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Active Record</h1>
+        
+        <h1>&nbsp;</h1>
+        
+        <h1>ActiveRecord</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
     <section class='bottom-left full-background rowdatagateway-16x9 slide'>
   <div class='spacer top'></div>
   <div class='content'>
@@ -444,16 +605,14 @@ GOTO 1
         
         <h4>&nbsp;</h4>
         
-        <h2><a href="http://martinfowler.com/eaaCatalog/rowDataGateway.htm">Row Data Gateway</a></h2>
-        
-        <h4>Think of it as ActiveRecord minus domain logic</h4>
+        <h1><a href="http://martinfowler.com/eaaCatalog/rowDataGateway.htm">Row Data Gateway</a></h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
-    <h1>ActiveRecord often isn't the best fit</h1>
+    <h1>Active Record often isn't the best fit</h1>
 
 <blockquote><p>If the [database table to domain model] mapping is simple, [the] Active Record [pattern] does the ... job without an additional layer of code. If the mapping is complex, [the] Data Mapper [pattern] works better, as it's better at decoupling the data structure from the domain objects because the domain objects don't need to know the layout of the database.</p></blockquote>
 
@@ -489,7 +648,9 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Simple? Complex?</h1>
+        <h1>Simple?</h1>
+        
+        <h1>Complex?</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -497,6 +658,8 @@ GOTO 1
       <div class='spacer top'></div>
       <div class='content'>
         <h1>Heuristic</h1>
+        
+        <p><img src="images/troll.png" style="width: 600px; height: 600px; bottom: 100px; right: 300px; position: absolute"></img></p>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -510,82 +673,41 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Clear separation between</h1>
+        <h1>Separation</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='datamapper full-background slide top-left'>
+      <div class='spacer top'></div>
+      <div class='content'>
         
-        <h2>source</h2>
-        
-        <h2>mapping</h2>
-        
-        <h2>model</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Can we use Active Record as part of a Data Mapper?</h1>
+        <h1><a href="http://datamapper.org">DataMapper</a> is not a true <a href="http://martinfowler.com/eaaCatalog/dataMapper.html">Data Mapper</a></h1>
+        
+        <h3>&nbsp;</h3>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>It's actually an Active Record</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>But can we use ActiveRecord as part of a Data Mapper?</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='full-background slide yo_dawg_orm2-16x9'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Layering is a two-edged sword</h1>
-        
-        <blockquote><p>Layers encapsulate some, but not all, things well.  As a result you sometimes get cascading changes.  The classic example of this in a layered enterprise application is adding a field that needs to display on the UI, must be in the database, and thus must be added to every layer in between.</p></blockquote>
-        
-        <p><cite>-- You should be used to seeing Fowler by now, POEAA</cite></p>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>"[Y]ou sometimes get cascading changes"</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Indirection is also a two-edged sword</h1>
-        
-        <blockquote><p>Refactoring tends to break big objects into several smaller ones and big methods into several smaller ones.  Indirection is a two-edged sword... Every time you break one thing into two pieces, you have more things to manage. It can also make a program harder to read as an object delegates to an object delegating to an object. So you'd like to minimize indirection.</p></blockquote>
-        
-        <p><cite>-- Fowler, Refactoring</cite></p>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>"Every time you break one thing into two pieces,</h1>
-        
-        <h1>you have more things to manage."</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Managing software complexity is hard</h1>
-        
-        <h1>&nbsp;</h1>
-        
-        <h2>Fuck it.</h2>
-        
-        <h2>Let's go have a dram</h2>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='full-background scotty slide'>
       <div class='spacer top'></div>
       <div class='content'>
         
@@ -602,7 +724,11 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1><a href="http://github.com/nulogy/edr">edr</a></h1>
+        <h1><a href="http://github.com/elight/edr">edr</a></h1>
+        
+        <h2>A step in the right direction</h2>
+        
+        <h3>... sort of</h3>
         
         <h1>&nbsp;</h1>
         
@@ -631,19 +757,7 @@ GOTO 1
     
     <h1>&nbsp;</h1>
     
-    <p><textarea class='code' display='none' mode='ruby'>class Order&#x000A;  include Edr::Model&#x000A;&#x000A;  fields :id, :amount, :deliver_at&#x000A;&#x000A;  wrap_associations :items&#x000A;&#x000A;  def add_item attrs&#x000A;    wrap association(:items).new(attrs)&#x000A;  end&#x000A;end</textarea>
-</p>
-  </div>
-  <div class='spacer bottom'></div>
-</section>
-    <section class='slide'>
-  <div class='spacer top'></div>
-  <div class='content'>
-    <h1>Domain Model to ActiveRecord</h1>
-    
-    <h1>&nbsp;</h1>
-    
-    <p><textarea class='code' display='none' mode='ruby'>Edr::Registry.define do&#x000A;  map Order, OrderData&#x000A;  map Item, ItemData&#x000A;end</textarea>
+    <p><textarea class='code' display='none' mode='ruby'>class Order&#x000A;  def add_item attrs&#x000A;    repository.create_item self, attrs&#x000A;  end&#x000A;  &#x000A;  # Business logic GOES HERE&#x000A;end</textarea>
 </p>
   </div>
   <div class='spacer bottom'></div>
@@ -663,111 +777,18 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Redesign <a href="http://github.com/nulogy/edr">edr</a> API for terseness</h1>
-        
-        <h1>via reflection</h1>
-        
-        <h2>see my <a href="https://github.com/elight/edr">fork</a></h2>
-        
-        <h3>a (slow) work in progress</h3>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='datamapper full-background slide top-left'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Why not <a href="http://datamapper.org">DataMapper</a>?</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1><a href="http://datamapper.org">DataMapper</a> is not a true <a href="http://martinfowler.com/eaaCatalog/dataMapper.html">Data Mapper</a></h1>
-        
-        <h3>It's actually an Active Record</h3>
-        
-        <h6>Confused yet?</h6>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1><a href="https://github.com/datamapper">DataMapper 2</a> <strong><em>is</em></strong> a true Data Mapper</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1><a href="https://github.com/datamapper">DataMapper 2</a> is always looking for contributors</h1>
-        
-        <h1>&nbsp;</h1>
-        
-        <h3>Contact <a href="http://twitter.com/dkubb">@dkubb</a> or</h3>
-        
-        <h3>or dkubb on #datamapper on freenode IRC</h3>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Vox populi, vox Dei</h1>
-        
-        <h2>Rails templating sucks</h2>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>Really, <strong><em>most</em></strong> templating sucks</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <blockquote><p>[C]ommon [templating] implementations make it too easy to put complicated logic in the page thus making it hard to maintain ... [and] to test...</p></blockquote>
-        
-        <p><cite>-- Fowler, POEAA</cite></p>
+        <h1>You probably don't want to try that at home</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
-    <h1>Presenters, Decorators, and View Models</h1>
-
-<h1>&nbsp;</h1>
-
-<h2><a href="http://www.confreaks.com/videos/884-railsconf2012-presenters-and-decorators-a-code-tour"><strong>Presenters and Decorators: A Code Tour</strong></a> by <a href="http://twitter.com/blowmage">Mike Moore</a></h2>
-
-<h2><a href="http://blip.tv/rubynation/jeff-casimir-fat-models-aren-t-enough-5562605"><strong>Fat Models Aren't Enough</strong></a> by <a href="http://twitter.com/jcasimir">Jeff Casimir</a></h2>
-  </div>
-  <div class='spacer bottom'></div>
-</section>
-    <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1><a href="https://github.com/apotonick/cells">Cells</a></h1>
-        
-        <h1>&nbsp;</h1>
-        
-        <h3>What if we had component views instead of partials?</h3>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
-    <section class='slide'>
-  <div class='spacer top'></div>
-  <div class='content'>
-    <h1>Template</h1>
+    <h1>What if your models could look something like this?</h1>
     
     <h1>&nbsp;</h1>
     
-    <p><textarea class='code' display='none' mode='ruby'><div id="header">&#x000A;  <%= render_cell :cart, :show, :user => @current_user %></textarea>
+    <p><textarea class='code' display='none' mode='ruby'>class Item&#x000A;  include Virtus&#x000A;  &#x000A;  attribute :item_number,  String&#x000A; &#x000A;  # biz logic here&#x000A;end&#x000A;&#x000A;class Order&#x000A;  include Virtus &#x000A;&#x000A;  attribute :order_number, String&#x000A;  attribute :items,        Array[Item]&#x000A;  &#x000A;  # here too&#x000A;end</textarea>
 </p>
   </div>
   <div class='spacer bottom'></div>
@@ -775,94 +796,98 @@ GOTO 1
     <section class='slide'>
   <div class='spacer top'></div>
   <div class='content'>
-    <h1>Cell</h1>
+    <h1>They can, if you DIY</h1>
     
-    <h3>Very much like a Controller</h3>
-    
-    <h3>&nbsp;</h3>
-    
-    <p><textarea class='code' display='none' mode='ruby'>class CartCell < Cell::Rails&#x000A;  def show(args)&#x000A;    user    = args[:user]&#x000A;    @items  = user.items_in_cart&#x000A;		  &#x000A;    render&#x000A;  end&#x000A;end</textarea>
+    <p><textarea class='code' display='none' mode='ruby'>class OrderMapper&#x000A;  def self.load(row_id)&#x000A;    od = OrderData.find(row_id)&#x000A;    Order.new(order_number: od.order_number)&#x000A;  end&#x000A;  &#x000A;  def self.dump(order)&#x000A;    od = OrderData.lookup(order.order_number)&#x000A;    if od&#x000A;      od.update_attributes(order.attributes)&#x000A;    else&#x000A;      OrderData.create!(order.attributes)&#x000A;    end&#x000A;  end&#x000A;end</textarea>
 </p>
   </div>
   <div class='spacer bottom'></div>
 </section>
-    <section class='slide'>
+    <section class='full-background rom slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Model View Controller Pattern</h1>
+        
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Are Cells better than Partials?</h1>
+        <h1><a href="https://github.com/rom-rb">ROM</a> <strong><em>will be</em></strong> a true Data Mapper</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>The Layering hobgoblin</h1>
+        <h1><a href="https://github.com/rom-rb">ROM</a> is always looking for contributors</h1>
+        
+        <h1>&nbsp;</h1>
+        
+        <h3>Contact <a href="http://twitter.com/dkubb">@dkubb</a> or <a href="http://twitter.com/_solnic_">@_solnic_</a></h3>
+        
+        <h3>or dkubb or solnic on #rom-rb on freenode IRC</h3>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Can we be <strong><em>more Rails than Rails?</em></strong></h1>
-        
-        <h2>&nbsp;</h2>
-        
-        <h2>Data Mapper 2</h2>
-        
-        <h2>Cells</h2>
+        <h1>Rails is almost 10 years old</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Tools that can help you now</h1>
+        <h1>Rails apps are growing more complex</h1>
         
-        <h2>Cells: Model View Controller Pattern</h2>
-        
-        <h2>Draper: Decorator Pattern</h2>
+        <h1>We need more than an 80% framework</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>For the future</h1>
+        <h1>There are too many choices</h1>
         
-        <h3>and could use your help</h3>
+        <h2>Patterns and their mplementations</h2>
         
-        <h2>Edr: Repository Pattern</h2>
+        <h1>&nbsp;</h1>
         
-        <h2>DataMapper 2: Data Mapper Pattern</h2>
+        <h1>We need <strong><em>more</em></strong> curation</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Doing my part:</h1>
+        
+        <h2>Look to ROM for the backend future</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>POEAA outlined Rails patterns</h1>
+        
+        <h1>It also provided alternatives</h1>
+        
+        <h1>&nbsp;</h1>
+        
+        <h1>Seek more answers within</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='middle slide'>
-  <div class='spacer top'></div>
-  <div class='content'>
-    <h1>THANKS!</h1>
-
-<h1>&nbsp;</h1>
-
-<h2>Evan Light</h2>
-
-<h3><strong><u>Freelance Mentor and Code Janitor</u></strong></h3>
-
-<h3><a href="http://twitter.com/elight">@elight</a></h3>
-
-<h3><a href="http://tripledogdare.net">http://tripledogdare.net</a></h3>
-
-<h3><a href="mailto:evan.light@tripledogdare.net">evan.light@tripledogdare.net</a></h3>
-  </div>
-  <div class='spacer bottom'></div>
-</section>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>THANKS!</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
     <!-- deck.js navigation extension -->
     <a class='deck-prev-link' href='#' title='Previous'>&#8592;</a>
     <a class='deck-next-link' href='#' title='Next'>&#8594;</a>
