@@ -1,7 +1,7 @@
 
 !SLIDE middle
 # Evan Light
-# **Developer Tutor and Code Janitor**
+# &nbsp;
 # &nbsp;
 # [@elight](http://twitter.com/elight)
 # [http://tripledogdare.net](http://tripledogdare.net)
@@ -59,14 +59,13 @@ UserController.finder = User
 # History lesson
 !NOTES
 
-!SLIDE
+!SLIDE top-left
 # 1995
-## Java: A better C++
+}}} images/java.jpg
 
-!SLIDE
-# 1999
-## Servlets 
-## Enterprise Java Beans
+!SLIDE top-left
+# 1999 - Enterprise Java Beans
+}}} images/russian-roulette.jpg
 
 !SLIDE
 # Enterprise Java Beans
@@ -90,12 +89,12 @@ UserController.finder = User
 
 !SLIDE
 # 2003ish
-## Java dev becomes commoditized
-## Offshoring, etc.
+## Commoditization 
+
 
 !SLIDE
 # 2005ish
-## Exodus begins in earnest
+## Exodus
 
 !SLIDE
 # Predictors?
@@ -351,12 +350,12 @@ GOTO 1
 
 !SLIDE bottom-left
 # But prevailing wisdom says to do this
-}}} images/rowdatagateway-16x9.png
+}}} images/tabledatagateway.png
 
 !SLIDE
 # There's a pattern for that!
 #### &nbsp;
-# [Row Data Gateway](http://martinfowler.com/eaaCatalog/rowDataGateway.htm)
+# [Table Data Gateway](http://martinfowler.com/eaaCatalog/tableDataGateway.html)
 !NOTE
 #ActiveRecord minus business logic
 
@@ -507,15 +506,16 @@ end
 class OrderMapper
   def self.load(row_id)
     od = OrderData.find(row_id)
-    Order.new(order_number: od.order_number)
+    order_from_order_data(od)
   end
   
   def self.dump(order)
-    od = OrderData.lookup(order.order_number)
+    od = OrderData.find(order.id)
+    attrs = order.attributes
     if od
-      od.update_attributes(order.attributes)
+      od.update_attributes(attrs)
     else
-      OrderData.create!(order.attributes)
+      OrderData.create!(attrs)
     end
   end
 end
@@ -525,7 +525,8 @@ end
 }}} images/rom.jpg
 
 !SLIDE
-# [ROM](https://github.com/rom-rb) ***will be*** a true Data Mapper
+# [Ruby Object Mapper](https://github.com/rom-rb) 
+# will be a ***true*** Data Mapper
 
 
 !SLIDE
@@ -542,9 +543,9 @@ end
 # Rails apps are growing more complex
 # We need more than an 80% framework
 
+
 !SLIDE
 # There are too many choices
-## Patterns and their mplementations
 # &nbsp;
 # We need ***more*** curation
 
@@ -553,8 +554,7 @@ end
 ## Look to ROM for the backend future
 
 !SLIDE
-# POEAA outlined Rails patterns
-# It also provided alternatives
+# POEAA predates Rails
 # &nbsp;
 # Seek more answers within
 
