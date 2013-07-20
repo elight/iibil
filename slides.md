@@ -535,23 +535,29 @@ end
 ### Contact [@dkubb](http://twitter.com/dkubb) or [@\_solnic\_](http://twitter.com/_solnic_)
 ### or dkubb or solnic on #rom-rb on freenode IRC
 
+!SLIDE
+# But maybe Java developers weren't crazy
+
+!SLIDE
+# Why POJOs?
+
+!SLIDE
+# We're due for our Spring
 
 !SLIDE
 # Rails is almost 10 years old
 
 !SLIDE
 # Rails apps are growing more complex
-# We need more than an 80% framework
-
 
 !SLIDE
 # There are too many choices
-# &nbsp;
+
+!SLIDE
 # We need ***more*** curation
 
 !SLIDE
-# Doing my part:
-## Look to ROM for the backend future
+# We need a framework designed for large apps
 
 !SLIDE
 # POEAA predates Rails
