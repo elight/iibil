@@ -25,22 +25,22 @@
   </head>
   <body class='deck-container keydown'>
     <section class='middle slide'>
-  <div class='spacer top'></div>
-  <div class='content'>
-    <h1>Evan Light</h1>
-
-<h1><strong>Developer Tutor and Code Janitor</strong></h1>
-
-<h1>&nbsp;</h1>
-
-<h1><a href="http://twitter.com/elight">@elight</a></h1>
-
-<h1><a href="http://tripledogdare.net">http://tripledogdare.net</a></h1>
-
-<h1><a href="mailto:evan.light@tripledogdare.net">evan.light@tripledogdare.net</a></h1>
-  </div>
-  <div class='spacer bottom'></div>
-</section>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Evan Light</h1>
+        
+        <h1>&nbsp;</h1>
+        
+        <h1>&nbsp;</h1>
+        
+        <h1><a href="http://twitter.com/elight">@elight</a></h1>
+        
+        <h1><a href="http://tripledogdare.net">http://tripledogdare.net</a></h1>
+        
+        <h1><a href="mailto:evan.light@tripledogdare.net">evan.light@tripledogdare.net</a></h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
     <section class='full-background middle slide stuff_i_do-16x9'>
       <div class='spacer top'></div>
       <div class='content'>
@@ -106,23 +106,17 @@
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='slide'>
+    <section class='full-background java slide top-left'>
       <div class='spacer top'></div>
       <div class='content'>
         <h1>1995</h1>
-        
-        <h2>Java: A better C++</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='slide'>
+    <section class='full-background russian-roulette slide top-left'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>1999</h1>
-        
-        <h2>Servlets</h2>
-        
-        <h2>Enterprise Java Beans</h2>
+        <h1>1999 - Enterprise Java Beans</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -166,9 +160,7 @@
       <div class='content'>
         <h1>2003ish</h1>
         
-        <h2>Java dev becomes commoditized</h2>
-        
-        <h2>Offshoring, etc.</h2>
+        <h2>Commoditization</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -177,7 +169,7 @@
       <div class='content'>
         <h1>2005ish</h1>
         
-        <h2>Exodus begins in earnest</h2>
+        <h2>Exodus</h2>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -591,7 +583,7 @@ GOTO 1
       </div>
       <div class='spacer bottom'></div>
     </section>
-    <section class='bottom-left full-background rowdatagateway-16x9 slide'>
+    <section class='bottom-left full-background slide tabledatagateway'>
   <div class='spacer top'></div>
   <div class='content'>
     <h1>But prevailing wisdom says to do this</h1>
@@ -605,7 +597,7 @@ GOTO 1
         
         <h4>&nbsp;</h4>
         
-        <h1><a href="http://martinfowler.com/eaaCatalog/rowDataGateway.htm">Row Data Gateway</a></h1>
+        <h1><a href="http://martinfowler.com/eaaCatalog/tableDataGateway.html">Table Data Gateway</a></h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -798,7 +790,7 @@ GOTO 1
   <div class='content'>
     <h1>They can, if you DIY</h1>
     
-    <p><textarea class='code' display='none' mode='ruby'>class OrderMapper&#x000A;  def self.load(row_id)&#x000A;    od = OrderData.find(row_id)&#x000A;    Order.new(order_number: od.order_number)&#x000A;  end&#x000A;  &#x000A;  def self.dump(order)&#x000A;    od = OrderData.lookup(order.order_number)&#x000A;    if od&#x000A;      od.update_attributes(order.attributes)&#x000A;    else&#x000A;      OrderData.create!(order.attributes)&#x000A;    end&#x000A;  end&#x000A;end</textarea>
+    <p><textarea class='code' display='none' mode='ruby'>class OrderMapper&#x000A;  def self.load(row_id)&#x000A;    od = OrderData.find(row_id)&#x000A;    order_from_order_data(od)&#x000A;  end&#x000A;  &#x000A;  def self.dump(order)&#x000A;    od = OrderData.find(order.id)&#x000A;    attrs = order.attributes&#x000A;    if od&#x000A;      od.update_attributes(attrs)&#x000A;    else&#x000A;      OrderData.create!(attrs)&#x000A;    end&#x000A;  end&#x000A;end</textarea>
 </p>
   </div>
   <div class='spacer bottom'></div>
@@ -813,7 +805,9 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1><a href="https://github.com/rom-rb">ROM</a> <strong><em>will be</em></strong> a true Data Mapper</h1>
+        <h1><a href="https://github.com/rom-rb">Ruby Object Mapper</a></h1>
+        
+        <h1>will be a <strong><em>true</em></strong> Data Mapper</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -833,6 +827,27 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
+        <h1>But maybe Java developers weren't crazy</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Why POJOs?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>We're due for our Spring</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
         <h1>Rails is almost 10 years old</h1>
       </div>
       <div class='spacer bottom'></div>
@@ -841,8 +856,6 @@ GOTO 1
       <div class='spacer top'></div>
       <div class='content'>
         <h1>Rails apps are growing more complex</h1>
-        
-        <h1>We need more than an 80% framework</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
@@ -850,11 +863,12 @@ GOTO 1
       <div class='spacer top'></div>
       <div class='content'>
         <h1>There are too many choices</h1>
-        
-        <h2>Patterns and their mplementations</h2>
-        
-        <h1>&nbsp;</h1>
-        
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
         <h1>We need <strong><em>more</em></strong> curation</h1>
       </div>
       <div class='spacer bottom'></div>
@@ -862,25 +876,21 @@ GOTO 1
     <section class='slide'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Doing my part:</h1>
-        
-        <h2>Look to ROM for the backend future</h2>
+        <h1>We need a framework designed for large apps</h1>
       </div>
       <div class='spacer bottom'></div>
     </section>
     <section class='slide'>
-      <div class='spacer top'></div>
-      <div class='content'>
-        <h1>POEAA outlined Rails patterns</h1>
-        
-        <h1>It also provided alternatives</h1>
-        
-        <h1>&nbsp;</h1>
-        
-        <h1>Seek more answers within</h1>
-      </div>
-      <div class='spacer bottom'></div>
-    </section>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>POEAA predates Rails</h1>
+
+<h1>&nbsp;</h1>
+
+<h1>Seek more answers within</h1>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
     <section class='middle slide'>
       <div class='spacer top'></div>
       <div class='content'>
